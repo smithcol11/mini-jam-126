@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcmo5lh5ir8f4"]
+[gd_scene load_steps=5 format=3 uid="uid://bcmo5lh5ir8f4"]
 
 [ext_resource type="PackedScene" uid="uid://d3c7qkqe30ex" path="res://prefabs/prototype_box.tscn" id="1_7v4p8"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6g8g"]
+diffuse_mode = 3
+specular_mode = 1
+roughness = 0.01
+
 [sub_resource type="BoxMesh" id="BoxMesh_nmia0"]
+material = SubResource("StandardMaterial3D_m6g8g")
 size = Vector3(60, 1, 60)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q8f5f"]
