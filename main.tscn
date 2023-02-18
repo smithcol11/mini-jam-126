@@ -1,21 +1,45 @@
-[gd_scene load_steps=4 format=3 uid="uid://t08q634nsl1f"]
+[gd_scene load_steps=9 format=3 uid="uid://t08q634nsl1f"]
 
 [ext_resource type="Script" path="res://scripts/camera_controller.gd" id="1_8sg2u"]
 [ext_resource type="PackedScene" uid="uid://bcmo5lh5ir8f4" path="res://levels/static_env.tscn" id="1_bi6lc"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_hheku"]
+[ext_resource type="PackedScene" uid="uid://bv0gcc0sgtk1d" path="res://prefabs/player_robot.tscn" id="3_lvfjn"]
+[ext_resource type="PackedScene" uid="uid://3ae54yl1qa0j" path="res://levels/start_menu.tscn" id="4_f83tp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0rn0q"]
+
+[sub_resource type="Sky" id="Sky_frcpr"]
+sky_material = SubResource("ProceduralSkyMaterial_0rn0q")
+
+[sub_resource type="Environment" id="Environment_3q5fa"]
+background_mode = 2
+background_energy_multiplier = 1.5
+sky = SubResource("Sky_frcpr")
+ssil_enabled = true
+volumetric_fog_albedo = Color(0.439216, 0.439216, 0.439216, 1)
+adjustment_enabled = true
+adjustment_brightness = 0.9
+adjustment_contrast = 1.2
+adjustment_saturation = 1.2
 
 [node name="Main" type="Node3D"]
+script = ExtResource("1_hheku")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3q5fa")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 18, 35, 18)
 projection = 1
 fov = 80.0
-size = 80.0
+size = 40.0
 script = ExtResource("1_8sg2u")
 smallestPanSpeed = 20.0
 largestPanSpeed = 50.0
 zoomSpeed = 4.0
 
 [node name="static_env" parent="." instance=ExtResource("1_bi6lc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.0048, 35.0826, 30.1681)
@@ -25,3 +49,9 @@ omni_range = 100.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.707107, 0.5, -0.5, 0, 0.707107, 0.707107, 0.707107, 0.5, -0.5, 0, 37, 0)
+
+[node name="PlayerRobot" parent="." instance=ExtResource("3_lvfjn")]
+
+[node name="StartMenu" parent="." instance=ExtResource("4_f83tp")]
+
+[connection signal="start_game" from="StartMenu" to="." method="_on_start_menu_start_game"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkkd070p8quca"]
+
+[ext_resource type="PackedScene" uid="uid://cop65brgmcgdl" path="res://models/Barrel.glb" id="1_04vcf"]
+[ext_resource type="Material" uid="uid://d3anaxu0yqpu0" path="res://materials/color_pallete_material.tres" id="2_2kevh"]
+
+[node name="Barrel" instance=ExtResource("1_04vcf")]
+
+[node name="Barrel2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_2kevh")

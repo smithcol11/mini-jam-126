@@ -1,0 +1,111 @@
+[gd_scene load_steps=9 format=3 uid="uid://3ae54yl1qa0j"]
+
+[ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_1nccn"]
+[ext_resource type="Texture2D" uid="uid://d3o5qcbibrhb8" path="res://icons/icons8-start-64.png" id="1_5o7vv"]
+[ext_resource type="Shader" uid="uid://b1khuqo3e4hsg" path="res://materials/pixel.tres" id="2_r8j25"]
+[ext_resource type="Texture2D" uid="uid://co8wrh1l81bky" path="res://icons/icons8-close-window-64.png" id="2_v0opp"]
+[ext_resource type="Theme" uid="uid://8kojskkw4y67" path="res://materials/theme.tres" id="5_rv7ra"]
+[ext_resource type="AudioStream" uid="uid://bay5vv8gsk5sx" path="res://sounds/menu_music.mp3" id="5_tfsdx"]
+[ext_resource type="AudioStream" uid="uid://dsd8el80y6u7y" path="res://sounds/beep.mp3" id="6_6slnq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4p2er"]
+shader = ExtResource("2_r8j25")
+shader_parameter/Pixel = 256.0
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1nccn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_4p2er")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.0
+offset_top = -130.0
+offset_right = 179.0
+offset_bottom = -53.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Start Game"
+icon = ExtResource("1_5o7vv")
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = 46.0
+offset_right = 167.0
+offset_bottom = 123.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Exit Game"
+icon = ExtResource("2_v0opp")
+
+[node name="Credits" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -216.0
+offset_top = -196.0
+offset_right = 221.0
+offset_bottom = -154.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("5_rv7ra")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 32
+text = "Created By: Levi, Cody, and Colin"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -344.0
+offset_top = 64.0
+offset_right = 355.0
+offset_bottom = 177.0
+grow_horizontal = 2
+theme = ExtResource("5_rv7ra")
+theme_type_variation = &"HeaderLarge"
+text = "Stranded Gardens"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_tfsdx")
+volume_db = -7.0
+autoplay = true
+
+[node name="StartGameSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_6slnq")
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

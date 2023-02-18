@@ -1,6 +1,19 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d3anaxu0yqpu0"]
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://d3anaxu0yqpu0"]
 
 [ext_resource type="Texture2D" uid="uid://6ktgsuid6nlb" path="res://textures/MiniJamColorPallete.png" id="1_ul8qi"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5hk5t"]
+cull_mode = 1
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.01
+
 [resource]
+next_pass = SubResource("StandardMaterial3D_5hk5t")
+diffuse_mode = 3
+specular_mode = 1
 albedo_texture = ExtResource("1_ul8qi")
+metallic = 0.5
+roughness = 0.05

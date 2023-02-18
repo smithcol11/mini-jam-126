@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhea7ivp73a0c"]
+
+[ext_resource type="Theme" uid="uid://8kojskkw4y67" path="res://materials/theme.tres" id="1_ni4fc"]
+[ext_resource type="Texture2D" uid="uid://b75rib7qxuh8y" path="res://icons/icons8-engineering-50.png" id="2_e22va"]
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("1_ni4fc")
+text = "Gears"
+icon = ExtResource("2_e22va")
