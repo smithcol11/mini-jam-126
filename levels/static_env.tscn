@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcmo5lh5ir8f4"]
+[gd_scene load_steps=4 format=3 uid="uid://bcmo5lh5ir8f4"]
+
+[ext_resource type="PackedScene" uid="uid://d3c7qkqe30ex" path="res://prefabs/prototype_box.tscn" id="1_7v4p8"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_nmia0"]
 size = Vector3(60, 1, 60)
@@ -19,3 +21,18 @@ skeleton = NodePath("")
 
 [node name="GroundCollider" type="CollisionShape3D" parent="Ground/StaticBody3D"]
 shape = SubResource("BoxShape3D_q8f5f")
+
+[node name="PrototypeBox" parent="." instance=ExtResource("1_7v4p8")]
+transform = Transform3D(15.1288, 0, 0, 0, 2.48048, 0, 0, 0, 47.0705, -22.5339, 1.21637, -4.67714)
+
+[node name="PrototypeBox2" parent="." instance=ExtResource("1_7v4p8")]
+transform = Transform3D(-6.61299e-07, 0, 47.0705, 0, 4.77162, 0, -15.1288, 0, -2.05752e-06, 5.20211, 2.27154, -21.437)
+
+[node name="PrototypeBox3" parent="." instance=ExtResource("1_7v4p8")]
+transform = Transform3D(-7.64944e-07, 0, 26.8991, 0, 22.1198, 0, -17.4999, 0, -1.1758e-06, -15.8971, 10.703, -18.0016)
+
+[node name="PrototypeBox5" parent="." instance=ExtResource("1_7v4p8")]
+transform = Transform3D(-7.64944e-07, 0, 18.1656, 0, 9.57098, 0, -17.4999, 0, -7.94044e-07, 19.7152, 4.53488, -4.39407)
+
+[node name="PrototypeBox4" parent="." instance=ExtResource("1_7v4p8")]
+transform = Transform3D(-4.22741e-07, 0, 7.26839, 0, 12.0498, 0, -9.67118, 0, -3.17711e-07, -23.6948, 20.9463, -12.201)
