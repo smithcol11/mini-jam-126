@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d3anaxu0yqpu0"]
+
+[ext_resource type="Texture2D" uid="uid://6ktgsuid6nlb" path="res://textures/MiniJamColorPallete.png" id="1_ul8qi"]
+
+[resource]
+albedo_texture = ExtResource("1_ul8qi")

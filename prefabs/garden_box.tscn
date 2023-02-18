@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcm066jayajju"]
+
+[ext_resource type="PackedScene" uid="uid://ckc7xogg1mt1g" path="res://models/GardenBox.glb" id="1_sn78o"]
+[ext_resource type="Material" uid="uid://d3anaxu0yqpu0" path="res://materials/color_pallete_material.tres" id="2_204wb"]
+
+[node name="GardenBox" instance=ExtResource("1_sn78o")]
+
+[node name="GardenBox2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_204wb")
