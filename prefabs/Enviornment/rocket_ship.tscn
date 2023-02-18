@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0q6kshimo8u"]
+
+[ext_resource type="PackedScene" uid="uid://pwudex7ima2r" path="res://models/RocketShip.glb" id="1_wko8p"]
+[ext_resource type="Material" uid="uid://d3anaxu0yqpu0" path="res://materials/color_pallete_material.tres" id="2_xclqw"]
+
+[node name="RocketShip" instance=ExtResource("1_wko8p")]
+
+[node name="Rocket" parent="RocketShip2" index="0"]
+surface_material_override/0 = ExtResource("2_xclqw")
+
+[node name="Bearing001" parent="RocketShip2/Rocket" index="0"]
+surface_material_override/0 = ExtResource("2_xclqw")
+
+[node name="fuel001" parent="RocketShip2/Rocket" index="1"]
+surface_material_override/0 = ExtResource("2_xclqw")
+
+[node name="Gear001" parent="RocketShip2/Rocket" index="2"]
+surface_material_override/0 = ExtResource("2_xclqw")
+
+[node name="Piston001" parent="RocketShip2/Rocket" index="3"]
+surface_material_override/0 = ExtResource("2_xclqw")
+
+[node name="Spring001" parent="RocketShip2/Rocket" index="4"]
+surface_material_override/0 = ExtResource("2_xclqw")

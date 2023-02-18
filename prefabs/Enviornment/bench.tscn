@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://1o3aorma5fkq"]
+
+[ext_resource type="PackedScene" uid="uid://cymam4e0fb545" path="res://models/Bench.glb" id="1_7era3"]
+[ext_resource type="Material" uid="uid://d3anaxu0yqpu0" path="res://materials/color_pallete_material.tres" id="2_yxp5q"]
+
+[node name="Bench" instance=ExtResource("1_7era3")]
+
+[node name="Bench2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_yxp5q")

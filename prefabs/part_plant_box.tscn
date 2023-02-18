@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://drm40frwggctf"]
+
+[ext_resource type="PackedScene" uid="uid://d2s2qanw6wacl" path="res://models/PartPlantBox.glb" id="1_h4nna"]
+[ext_resource type="Material" uid="uid://d3anaxu0yqpu0" path="res://materials/color_pallete_material.tres" id="2_xq6cv"]
+
+[node name="PartPlantBox" instance=ExtResource("1_h4nna")]
+
+[node name="PlantBox" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_xq6cv")

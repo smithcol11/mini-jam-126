@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://4d1sloujmanu"]
+
+[ext_resource type="PackedScene" uid="uid://0lph41aqtaur" path="res://models/House.glb" id="1_x8llk"]
+[ext_resource type="Material" uid="uid://d3anaxu0yqpu0" path="res://materials/color_pallete_material.tres" id="2_q2oat"]
+
+[node name="House" instance=ExtResource("1_x8llk")]
+
+[node name="House2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_q2oat")

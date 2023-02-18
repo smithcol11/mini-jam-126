@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://422hxdtau8cy"]
+
+[ext_resource type="PackedScene" uid="uid://coxacqo3woigj" path="res://models/Table.glb" id="1_grqq5"]
+[ext_resource type="Material" uid="uid://d3anaxu0yqpu0" path="res://materials/color_pallete_material.tres" id="2_268nm"]
+
+[node name="Table" instance=ExtResource("1_grqq5")]
+
+[node name="Table2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_268nm")

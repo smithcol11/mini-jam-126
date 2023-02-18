@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cov3uiyciipip"]
+
+[ext_resource type="PackedScene" uid="uid://bdp63yt6bgij4" path="res://models/part_plants/PistonPartPlant.glb" id="1_fyl1h"]
+[ext_resource type="Material" uid="uid://d3anaxu0yqpu0" path="res://materials/color_pallete_material.tres" id="2_n0arw"]
+
+[node name="PistonPartPlant" instance=ExtResource("1_fyl1h")]
+
+[node name="PistonPartPlant2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_n0arw")
+
+[node name="Piston" parent="PistonPartPlant2" index="0"]
+surface_material_override/0 = ExtResource("2_n0arw")

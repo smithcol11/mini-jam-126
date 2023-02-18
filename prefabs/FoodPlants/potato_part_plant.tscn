@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdq0ao4sjc3oi"]
+
+[ext_resource type="PackedScene" uid="uid://dwfoehqney4dr" path="res://models/food_plants/PotatoPartPlant.glb" id="1_hpxh0"]
+[ext_resource type="Material" uid="uid://d3anaxu0yqpu0" path="res://materials/color_pallete_material.tres" id="2_sxxxw"]
+
+[node name="PotatoPartPlant" instance=ExtResource("1_hpxh0")]
+
+[node name="PotatoFoodPlant" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_sxxxw")
+
+[node name="WhitePotato02" parent="PotatoFoodPlant" index="0"]
+surface_material_override/0 = ExtResource("2_sxxxw")

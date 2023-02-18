@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4dqi84vdklks"]
+
+[ext_resource type="PackedScene" uid="uid://cywwc14dn3qeg" path="res://models/part_plants/FuelPartPlant.glb" id="1_l4mgv"]
+[ext_resource type="Material" uid="uid://d3anaxu0yqpu0" path="res://materials/color_pallete_material.tres" id="2_homes"]
+
+[node name="FuelPartPlant" instance=ExtResource("1_l4mgv")]
+
+[node name="FuelPartPlant2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_homes")
+
+[node name="fuel" parent="FuelPartPlant2" index="0"]
+surface_material_override/0 = ExtResource("2_homes")
