@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://t08q634nsl1f"]
+[gd_scene load_steps=4 format=3 uid="uid://t08q634nsl1f"]
 
+[ext_resource type="Script" path="res://scripts/camera_controller.gd" id="1_8sg2u"]
 [ext_resource type="PackedScene" uid="uid://bcmo5lh5ir8f4" path="res://levels/static_env.tscn" id="1_bi6lc"]
 [ext_resource type="PackedScene" uid="uid://ckc7xogg1mt1g" path="res://models/GardenBox.glb" id="2_8u5cc"]
 
@@ -10,6 +11,10 @@ transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -
 projection = 1
 fov = 80.0
 size = 80.0
+script = ExtResource("1_8sg2u")
+smallestPanSpeed = 20.0
+largestPanSpeed = 50.0
+zoomSpeed = 4.0
 
 [node name="static_env" parent="." instance=ExtResource("1_bi6lc")]
 
