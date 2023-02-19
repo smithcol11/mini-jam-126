@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://t08q634nsl1f"]
+[gd_scene load_steps=28 format=3 uid="uid://t08q634nsl1f"]
 
 [ext_resource type="Script" path="res://scripts/camera_controller.gd" id="1_8sg2u"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_hheku"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://dcx2lbx48l0s1" path="res://prefabs/Enviornment/tree_2.tscn" id="19_wurbd"]
 [ext_resource type="AudioStream" uid="uid://dcud0oe4516km" path="res://sounds/cottagecore.mp3" id="21_jo4kc"]
 [ext_resource type="AudioStream" uid="uid://iwiv04y4th4q" path="res://sounds/gamemusic.mp3" id="22_hhoiw"]
+[ext_resource type="PackedScene" uid="uid://ccdg24p4twn2w" path="res://prefabs/pause_menu.tscn" id="24_chffk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0rn0q"]
 
@@ -500,6 +501,9 @@ volume_db = -7.0
 [node name="Music2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_hhoiw")
 volume_db = -7.0
+
+[node name="PauseMenu" parent="." instance=ExtResource("24_chffk")]
+visible = false
 
 [connection signal="start_game" from="StartMenu" to="." method="_on_start_menu_start_game"]
 [connection signal="start_game" from="StartMenu" to="Hud" method="_on_start_menu_start_game"]

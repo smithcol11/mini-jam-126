@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccdg24p4twn2w"]
+
+[ext_resource type="Script" path="res://pause_menu.gd" id="1_o2yh0"]
+[ext_resource type="LabelSettings" uid="uid://csmlc7xxldku6" path="res://label_styles/main_label_style.tres" id="2_sbwo4"]
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o2yh0")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.623529, 0.945098, 0.65098, 0.254902)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "PAUSED"
+label_settings = ExtResource("2_sbwo4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ResumeButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Resume Game"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
