@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://ce50q6malh3b8"]
+[gd_scene load_steps=31 format=3 uid="uid://ce50q6malh3b8"]
 
 [ext_resource type="Script" path="res://scripts/camera_controller.gd" id="1_8sg2u"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_hheku"]
@@ -24,9 +24,10 @@
 [ext_resource type="AudioStream" uid="uid://dcud0oe4516km" path="res://sounds/cottagecore.mp3" id="21_jo4kc"]
 [ext_resource type="AudioStream" uid="uid://iwiv04y4th4q" path="res://sounds/gamemusic.mp3" id="22_hhoiw"]
 [ext_resource type="PackedScene" uid="uid://catx4c1hpypnn" path="res://prefabs/pause_menu.tscn" id="24_chffk"]
-[ext_resource type="PackedScene" uid="uid://ugnangso60we" path="res://prefabs/seed_picker_menu.tscn" id="25_4qfcd"]
+[ext_resource type="PackedScene" uid="uid://wkqo6oyvjcbm" path="res://prefabs/seed_picker_menu.tscn" id="25_4qfcd"]
 [ext_resource type="AudioStream" uid="uid://dsd8el80y6u7y" path="res://sounds/beep.mp3" id="26_s3y85"]
 [ext_resource type="Script" path="res://scripts/sound_manager.gd" id="27_2ah65"]
+[ext_resource type="PackedScene" uid="uid://byhq8tejx5vem" path="res://prefabs/game_over_menu.tscn" id="28_6taai"]
 
 [sub_resource type="Sky" id="Sky_67ktu"]
 
@@ -735,9 +736,13 @@ stream = ExtResource("26_s3y85")
 
 [node name="SeedInventory" type="Node" parent="."]
 
+[node name="GameOverMenu" parent="." instance=ExtResource("28_6taai")]
+visible = false
+
 [connection signal="start_game" from="StartMenu" to="." method="_on_start_menu_start_game"]
 [connection signal="start_game" from="StartMenu" to="Hud" method="_on_start_menu_start_game"]
 [connection signal="start_game" from="StartMenu" to="SoundManager" method="_on_start_menu_start_game"]
+[connection signal="game_over" from="Hud" to="GameOverMenu" method="_on_hud_game_over"]
 [connection signal="season_change" from="Hud" to="." method="_on_hud_season_change"]
 [connection signal="visibility_changed" from="Hud" to="SeedPickerMenu" method="_on_hud_visibility_changed"]
 [connection signal="year_change" from="Hud" to="SeedPickerMenu" method="_on_hud_year_change"]

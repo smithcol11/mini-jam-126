@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ugnangso60we"]
+[gd_scene load_steps=5 format=3 uid="uid://wkqo6oyvjcbm"]
 
-[ext_resource type="Script" path="res://prefabs/seed_picker_menu.gd" id="1_p8fn7"]
+[ext_resource type="Script" path="res://scripts/seed_picker_menu.gd" id="1_uig6b"]
 [ext_resource type="LabelSettings" uid="uid://csmlc7xxldku6" path="res://label_styles/main_label_style.tres" id="2_05x56"]
 [ext_resource type="Theme" uid="uid://8kojskkw4y67" path="res://materials/theme.tres" id="3_h1grr"]
 [ext_resource type="Texture2D" uid="uid://b75rib7qxuh8y" path="res://icons/icons8-engineering-50.png" id="4_w7gc7"]
@@ -13,7 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_p8fn7")
+script = ExtResource("1_uig6b")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1

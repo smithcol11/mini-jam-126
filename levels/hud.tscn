@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ccu45lnqeh7x0"]
+[gd_scene load_steps=20 format=3 uid="uid://ccu45lnqeh7x0"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_7arxs"]
 [ext_resource type="Theme" uid="uid://8kojskkw4y67" path="res://materials/theme.tres" id="1_ni4fc"]
@@ -10,8 +10,25 @@
 [ext_resource type="Texture2D" uid="uid://pbajh11eyu86" path="res://icons/icons8-fuel-gas-64.png" id="5_todq5"]
 [ext_resource type="Texture2D" uid="uid://bnb2mb22pj0ns" path="res://icons/icons8-bread-and-rye-50.png" id="6_ivdkp"]
 [ext_resource type="Texture2D" uid="uid://dw6skf20mo3lf" path="res://icons/icons8-spring-in-motion-50.png" id="6_o8dul"]
+[ext_resource type="SystemFont" uid="uid://c4dkrnrhy1e82" path="res://fonts/MainFont.tres" id="7_g0m42"]
+[ext_resource type="Script" path="res://scripts/hud_scripts/food_supply_bar.gd" id="9_auvrm"]
 [ext_resource type="LabelSettings" uid="uid://csmlc7xxldku6" path="res://label_styles/main_label_style.tres" id="11_328qs"]
 [ext_resource type="Script" path="res://scripts/hud_scripts/season_label.gd" id="11_hfpgl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pqo7o"]
+bg_color = Color(0.364706, 0.364706, 0.364706, 0.215686)
+
+[sub_resource type="Theme" id="Theme_w48hf"]
+default_font = ExtResource("7_g0m42")
+default_font_size = 32
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6josn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wlkgg"]
+bg_color = Color(0.745098, 0, 0.176471, 0.945098)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5ldf"]
+bg_color = Color(0.792157, 0.156863, 0.223529, 0.870588)
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -22,64 +39,124 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7arxs")
 
-[node name="Button" type="Button" parent="."]
+[node name="GearAmount" type="Button" parent="."]
 layout_mode = 2
 offset_right = 75.0
 offset_bottom = 64.0
 theme = ExtResource("1_ni4fc")
-text = "0"
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_g0m42")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/disabled = SubResource("StyleBoxFlat_pqo7o")
+disabled = true
+text = "0/100"
 icon = ExtResource("2_e22va")
 icon_alignment = 1
 
-[node name="Button2" type="Button" parent="."]
-layout_mode = 2
-offset_top = 139.0
-offset_right = 75.0
-offset_bottom = 203.0
-theme = ExtResource("1_ni4fc")
-text = "0"
-icon = ExtResource("3_4gy33")
-icon_alignment = 1
-
-[node name="Button3" type="Button" parent="."]
+[node name="BearingAmount" type="Button" parent="."]
 layout_mode = 2
 offset_top = 64.0
 offset_right = 75.0
 offset_bottom = 139.0
 theme = ExtResource("1_ni4fc")
-text = "0"
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_g0m42")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/disabled = SubResource("StyleBoxFlat_pqo7o")
+disabled = true
+text = "0/50"
 icon = ExtResource("4_l88j7")
 icon_alignment = 1
 
-[node name="Button4" type="Button" parent="."]
+[node name="PistonAmount" type="Button" parent="."]
 layout_mode = 2
-offset_top = 267.0
+offset_top = 139.0
 offset_right = 75.0
-offset_bottom = 339.0
+offset_bottom = 203.0
 theme = ExtResource("1_ni4fc")
-text = "0"
-icon = ExtResource("5_todq5")
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_g0m42")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/disabled = SubResource("StyleBoxFlat_pqo7o")
+disabled = true
+text = "0/25"
+icon = ExtResource("3_4gy33")
 icon_alignment = 1
 
-[node name="Button6" type="Button" parent="."]
-layout_mode = 2
-offset_top = 384.0
-offset_right = 75.0
-offset_bottom = 448.0
-theme = ExtResource("1_ni4fc")
-text = "0"
-icon = ExtResource("6_ivdkp")
-icon_alignment = 1
-
-[node name="Button5" type="Button" parent="."]
+[node name="SpringAmount" type="Button" parent="."]
 layout_mode = 2
 offset_top = 203.0
 offset_right = 75.0
 offset_bottom = 267.0
 theme = ExtResource("1_ni4fc")
-text = "0"
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_g0m42")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/disabled = SubResource("StyleBoxFlat_pqo7o")
+disabled = true
+text = "0/10"
 icon = ExtResource("6_o8dul")
 icon_alignment = 1
+
+[node name="FuelAmount" type="Button" parent="."]
+layout_mode = 2
+offset_top = 267.0
+offset_right = 75.0
+offset_bottom = 339.0
+theme = ExtResource("1_ni4fc")
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_g0m42")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/disabled = SubResource("StyleBoxFlat_pqo7o")
+disabled = true
+text = "0/50"
+icon = ExtResource("5_todq5")
+icon_alignment = 1
+
+[node name="FoodSupplyBar" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -229.0
+offset_bottom = -165.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = SubResource("Theme_w48hf")
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6josn")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_wlkgg")
+disabled = true
+button_mask = 0
+text = "0"
+icon = ExtResource("6_ivdkp")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("9_auvrm")
+
+[node name="ProgressBar" type="ProgressBar" parent="FoodSupplyBar"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = 32.0
+offset_right = -3.0
+offset_bottom = 331.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(1.04, 1)
+theme_override_styles/fill = SubResource("StyleBoxFlat_q5ldf")
+max_value = 1000.0
+step = 1.0
+value = 500.0
+fill_mode = 3
+show_percentage = false
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 layout_mode = 1
@@ -92,6 +169,7 @@ offset_bottom = 43.0
 grow_horizontal = 2
 max_value = 90.0
 step = 1.0
+show_percentage = false
 
 [node name="Button7" type="Button" parent="ProgressBar"]
 layout_mode = 1
@@ -100,6 +178,8 @@ offset_top = -8.0
 offset_right = -14.0
 offset_bottom = 50.0
 theme = ExtResource("1_ni4fc")
+disabled = true
+button_mask = 0
 icon = ExtResource("3_x0ij1")
 icon_alignment = 1
 
@@ -114,6 +194,8 @@ offset_right = 74.0
 offset_bottom = 50.0
 grow_horizontal = 0
 theme = ExtResource("1_ni4fc")
+disabled = true
+button_mask = 0
 icon = ExtResource("4_1yifo")
 icon_alignment = 1
 
@@ -166,6 +248,7 @@ grow_vertical = 0
 
 [node name="Timer" type="Timer" parent="."]
 
+[connection signal="day_change" from="." to="FoodSupplyBar" method="_on_hud_day_change"]
 [connection signal="season_change" from="." to="ProgressBar/SeasonLabel" method="_on_hud_season_change"]
 [connection signal="year_change" from="." to="ProgressBar/SeasonLabel" method="_on_hud_year_change"]
 [connection signal="value_changed" from="ProgressBar" to="." method="_on_progress_bar_value_changed"]
