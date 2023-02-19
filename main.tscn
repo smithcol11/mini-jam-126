@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://ce50q6malh3b8"]
+[gd_scene load_steps=32 format=3 uid="uid://ce50q6malh3b8"]
 
 [ext_resource type="Script" path="res://scripts/camera_controller.gd" id="1_8sg2u"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_hheku"]
@@ -28,6 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://dsd8el80y6u7y" path="res://sounds/beep.mp3" id="26_s3y85"]
 [ext_resource type="Script" path="res://scripts/sound_manager.gd" id="27_2ah65"]
 [ext_resource type="PackedScene" uid="uid://byhq8tejx5vem" path="res://prefabs/game_over_menu.tscn" id="28_6taai"]
+[ext_resource type="Script" path="res://scripts/seed_inventory.gd" id="28_kcqye"]
 
 [sub_resource type="Sky" id="Sky_67ktu"]
 
@@ -48,6 +49,9 @@ adjustment_saturation = 1.2
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_hheku")
+
+[node name="SeedInventory" type="Node" parent="."]
+script = ExtResource("28_kcqye")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_3q5fa")
@@ -734,13 +738,13 @@ script = ExtResource("27_2ah65")
 [node name="StartGameSound" type="AudioStreamPlayer" parent="SoundManager"]
 stream = ExtResource("26_s3y85")
 
-[node name="SeedInventory" type="Node" parent="."]
-
 [node name="GameOverMenu" parent="." instance=ExtResource("28_6taai")]
 visible = false
 
 [connection signal="start_game" from="StartMenu" to="." method="_on_start_menu_start_game"]
+[connection signal="start_game" from="StartMenu" to="Camera3D" method="_on_start_menu_start_game"]
 [connection signal="start_game" from="StartMenu" to="Hud" method="_on_start_menu_start_game"]
+[connection signal="start_game" from="StartMenu" to="Enviornment" method="_on_start_menu_start_game"]
 [connection signal="start_game" from="StartMenu" to="SoundManager" method="_on_start_menu_start_game"]
 [connection signal="game_over" from="Hud" to="GameOverMenu" method="_on_hud_game_over"]
 [connection signal="season_change" from="Hud" to="." method="_on_hud_season_change"]

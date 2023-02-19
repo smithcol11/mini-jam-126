@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://wkqo6oyvjcbm"]
+[gd_scene load_steps=11 format=3 uid="uid://wkqo6oyvjcbm"]
 
 [ext_resource type="Script" path="res://scripts/seed_picker_menu.gd" id="1_uig6b"]
 [ext_resource type="LabelSettings" uid="uid://csmlc7xxldku6" path="res://label_styles/main_label_style.tres" id="2_05x56"]
 [ext_resource type="Theme" uid="uid://8kojskkw4y67" path="res://materials/theme.tres" id="3_h1grr"]
 [ext_resource type="Texture2D" uid="uid://b75rib7qxuh8y" path="res://icons/icons8-engineering-50.png" id="4_w7gc7"]
+[ext_resource type="Texture2D" uid="uid://cssyklwnu0kqh" path="res://icons/icons8-piston-50.png" id="5_yd2hw"]
+[ext_resource type="Texture2D" uid="uid://wtygfjy4tw2m" path="res://icons/icons8-bearing-67.png" id="6_qh47o"]
+[ext_resource type="Texture2D" uid="uid://pbajh11eyu86" path="res://icons/icons8-fuel-gas-64.png" id="7_e7itv"]
+[ext_resource type="Texture2D" uid="uid://dw6skf20mo3lf" path="res://icons/icons8-spring-in-motion-50.png" id="8_uifaa"]
+[ext_resource type="SystemFont" uid="uid://c4dkrnrhy1e82" path="res://fonts/MainFont.tres" id="9_ehnsl"]
+[ext_resource type="Texture2D" uid="uid://e8ecswohwoce" path="res://icons/icons8-flax-seeds-64.png" id="9_ub5ja"]
 
 [node name="SeedPickerMenu" type="Control"]
 process_mode = 3
@@ -46,18 +52,181 @@ vertical_alignment = 1
 [node name="Control" type="Control" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="GearSeedButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "Part Plants (Win Condition)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxPartPlants" type="HBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxPartPlants"]
+layout_mode = 2
+
+[node name="GearSeedButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxPartPlants/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_h1grr")
-text = "0"
 icon = ExtResource("4_w7gc7")
 icon_alignment = 1
 
+[node name="GearSeedLabel" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxPartPlants/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxPartPlants"]
+layout_mode = 2
+
+[node name="PistonSeedButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxPartPlants/VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("3_h1grr")
+icon = ExtResource("5_yd2hw")
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxPartPlants/VBoxContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxPartPlants"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BearingSeedButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxPartPlants/VBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("3_h1grr")
+icon = ExtResource("6_qh47o")
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxPartPlants/VBoxContainer3"]
+layout_mode = 2
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxPartPlants"]
+layout_mode = 2
+
+[node name="FuelSeedButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxPartPlants/VBoxContainer4"]
+layout_mode = 2
+theme = ExtResource("3_h1grr")
+icon = ExtResource("7_e7itv")
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxPartPlants/VBoxContainer4"]
+layout_mode = 2
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxPartPlants"]
+layout_mode = 2
+
+[node name="SpringSeedButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxPartPlants/VBoxContainer5"]
+layout_mode = 2
+theme = ExtResource("3_h1grr")
+icon = ExtResource("8_uifaa")
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxPartPlants/VBoxContainer5"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "|   |
+|   |
+|   |
+|   |"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2"]
+layout_mode = 2
+text = "Food Plants (Survival)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxFoodPlants" type="HBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants"]
+layout_mode = 2
+
+[node name="PotatoSeedButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_h1grr")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_ehnsl")
+text = "Potato"
+icon = ExtResource("9_ub5ja")
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants"]
+layout_mode = 2
+
+[node name="TomatoSeedButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("3_h1grr")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_ehnsl")
+text = "Tomato"
+icon = ExtResource("9_ub5ja")
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="WheatSeedButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("3_h1grr")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_ehnsl")
+text = "Wheat"
+icon = ExtResource("9_ub5ja")
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer3"]
+layout_mode = 2
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants"]
+layout_mode = 2
+
+[node name="CarrotSeedButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer4"]
+layout_mode = 2
+theme = ExtResource("3_h1grr")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_ehnsl")
+text = "Carrot"
+icon = ExtResource("9_ub5ja")
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer4"]
+layout_mode = 2
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants"]
+layout_mode = 2
+
+[node name="BroccoliSeedButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer5"]
+layout_mode = 2
+theme = ExtResource("3_h1grr")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_ehnsl")
+text = "Broccoli"
+icon = ExtResource("9_ub5ja")
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer5"]
+layout_mode = 2
+
 [node name="ResumeButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 text = "BEGIN"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]

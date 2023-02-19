@@ -9,6 +9,8 @@ extends Camera3D
 var initialPosition : Vector3
 var zoomVal : float = 1.0 # zoom between 0.0 and 1.0
 
+var enableControls = false;
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	initialPosition = transform.origin
@@ -20,6 +22,10 @@ func evaluateScreenSize(zoom):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if (enableControls):
+		update_input(delta)
+			
+func update_input(delta):
 	var xdir = 0
 	var ydir = 0
 	if Input.is_action_pressed("ScreenPanLeft"):
@@ -48,3 +54,7 @@ func _process(delta):
 		var pSpeed = largestPanSpeed - ((largestPanSpeed - smallestPanSpeed) * y)
 		var moveVec = Vector3(pSpeed * xdir * delta, pSpeed * ydir * delta, 0)
 		translate_object_local(moveVec)
+
+
+func _on_start_menu_start_game():
+	enableControls = true
