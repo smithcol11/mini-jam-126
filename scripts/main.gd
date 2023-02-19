@@ -11,3 +11,10 @@ func _physics_process(delta):
 func _on_start_menu_start_game():
 	$Hud.show()
 	$StartMenu.queue_free()
+	$Music.play()
+
+func _on_music_finished():
+	$Music2.play()
+
+func _on_music_2_finished():
+	$Music.play()

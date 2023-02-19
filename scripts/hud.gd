@@ -20,7 +20,7 @@ func _on_timer_timeout():
 	pass # Replace with function body.
 
 func _on_progress_bar_value_changed(value):
-	if value == 10:
+	if value == 100:
 		if season == 1:
 			$ProgressBar/Button7.icon = icon_spring
 			$ProgressBar/Button8.icon = icon_summer
