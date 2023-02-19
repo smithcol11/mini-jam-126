@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://t08q634nsl1f"]
+[gd_scene load_steps=27 format=3 uid="uid://t08q634nsl1f"]
 
 [ext_resource type="Script" path="res://scripts/camera_controller.gd" id="1_8sg2u"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_hheku"]
+[ext_resource type="Script" path="res://scripts/directional_light_3d.gd" id="3_jdgnu"]
 [ext_resource type="PackedScene" uid="uid://bv0gcc0sgtk1d" path="res://prefabs/player_robot.tscn" id="3_lvfjn"]
 [ext_resource type="PackedScene" uid="uid://3ae54yl1qa0j" path="res://levels/start_menu.tscn" id="4_f83tp"]
 [ext_resource type="PackedScene" uid="uid://cb2onshaynj25" path="res://prefabs/Enviornment/enviornment.tscn" id="5_quxs5"]
@@ -57,12 +58,14 @@ zoomSpeed = 4.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.0048, 35.0826, 30.1681)
+visible = false
 light_energy = 30.0
 shadow_enabled = true
 omni_range = 100.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.707107, 0.5, -0.5, 0, 0.707107, 0.707107, 0.707107, 0.5, -0.5, 0, 37, 0)
+transform = Transform3D(-0.375949, 0, 0.92664, 0, 1, 0, -0.92664, 0, -0.375949, 11.4933, 37, 0)
+script = ExtResource("3_jdgnu")
 
 [node name="PlayerRobot" parent="." instance=ExtResource("3_lvfjn")]
 
