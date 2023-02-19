@@ -1,16 +1,5 @@
 extends Label
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
 func _on_hud_season_change(season):
 	if (season == 1):
 		text = "Winter"
@@ -20,3 +9,6 @@ func _on_hud_season_change(season):
 		text = "Summer"
 	elif (season == 4):
 		text = "Fall"
+		
+func _on_hud_year_change(year):
+	get_node("YearLabel").text = str("Year: ", year)

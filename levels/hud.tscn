@@ -136,6 +136,24 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("11_hfpgl")
 
+[node name="YearLabel" type="Label" parent="ProgressBar/SeasonLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = 16.5
+offset_right = 43.5
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Year: 1"
+label_settings = ExtResource("11_328qs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -149,5 +167,6 @@ grow_vertical = 0
 [node name="Timer" type="Timer" parent="."]
 
 [connection signal="season_change" from="." to="ProgressBar/SeasonLabel" method="_on_hud_season_change"]
+[connection signal="year_change" from="." to="ProgressBar/SeasonLabel" method="_on_hud_year_change"]
 [connection signal="value_changed" from="ProgressBar" to="." method="_on_progress_bar_value_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

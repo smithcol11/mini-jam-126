@@ -17,6 +17,5 @@ func get_is_paused() -> bool:
 func _on_resume_button_pressed():
 	self.is_paused = false
 
-
 func _on_quit_button_pressed():
 	get_tree().quit()
