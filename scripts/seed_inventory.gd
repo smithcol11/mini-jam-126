@@ -1,94 +1,69 @@
 extends Node
 
-#enum {WINTER, SPRING, SUMMER, FALL}
+enum {WINTER, SPRING, SUMMER, FALL}
 
-class FoodPlant:
-	var name: String
-	var mature_time: int
-	var preferred_seaons: Array
-	var death_seasons: Array
-	var food_restored: int
+var FoodPlant = {}
 	
-class PartPlant:
-	var name: String
-	var yieldMin: int
-	var yieldMax: int
+var PartPlant = {}
 	
-@export var partPlants : Array
-@export var foodPlants : Array
+#part plants:
+var gearPlant
+var pistonPlant
+var bearingPlant
+var fuelPlant
+var springPlant
+
+#food plants:
+var potatoPlant
+var tomatoPlant
+var wheatPlant
+var carrotPlant
+var broccoliPlant
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#Setup part plants
-	var gearPlant = PartPlant.new()
-	gearPlant.name = "gearPlant"
-	gearPlant.yieldMin = 10
-	gearPlant.yieldMax = 25
-	
-	var pistonPlant = PartPlant.new()
-	pistonPlant.name = "pistonPlant"
-	pistonPlant.yieldMin = 5
-	pistonPlant.yieldMax = 15
-	
-	var bearingPlant = PartPlant.new()
-	bearingPlant.name = "bearingPlant"
-	bearingPlant.yieldMin = 5
-	bearingPlant.yieldMax = 10
-	
-	var fuelPlant = PartPlant.new()
-	fuelPlant.name = "fuelPlant"
-	fuelPlant.yieldMin = 5
-	fuelPlant.yieldMax = 15
-	
-	var springPlant = PartPlant.new()
-	springPlant.name = "springPlant"
-	springPlant.yieldMin = 1
-	springPlant.yieldMax = 2
-	
-	partPlants = [gearPlant, pistonPlant, bearingPlant, fuelPlant, springPlant]
+	gearPlant = {"yieldMin": 10, "yieldMax": 25}
+	pistonPlant = {"yieldMin": 5, "yieldMax": 15}
+	bearingPlant = {"yieldMin": 5, "yieldMax": 10}
+	fuelPlant = {"yieldMin": 5, "yieldMax": 15}
+	springPlant = {"yieldMin": 1, "yieldMax": 2}
 	
 	#setup food plants
-	var potatoPlant = FoodPlant.new()
-	potatoPlant.name = "potatoPlant"
-	potatoPlant.mature_time = 30
-	potatoPlant.preferred_seaons = ["SUMMER"]
-	potatoPlant.death_seasons = ["WINTER"]
-	potatoPlant.food_restored = 60
-	
-	var tomatoPlant = FoodPlant.new()
-	tomatoPlant.name = "tomatoPlant"
-	tomatoPlant.mature_time = 45
-	tomatoPlant.preferred_seaons = ["SPRING", "SUMMER"]
-	tomatoPlant.death_seasons = ["FALL", "WINTER"]
-	tomatoPlant.food_restored = 90
-	
-	var wheatPlant = FoodPlant.new()
-	wheatPlant.name = "wheatPlant"
-	wheatPlant.mature_time = 20
-	wheatPlant.preferred_seaons = ["SUMMER"]
-	wheatPlant.death_seasons = []
-	wheatPlant.food_restored = 20
-	
-	var carrotPlant = FoodPlant.new()
-	carrotPlant.name = "carrotPlant"
-	carrotPlant.mature_time = 60
-	carrotPlant.preferred_seaons = ["SPRING", "FALL"]
-	carrotPlant.death_seasons = ["WINTER"]
-	carrotPlant.food_restored = 100
-	
-	var broccoliPlant = FoodPlant.new()
-	broccoliPlant.name = "broccoliPlant"
-	broccoliPlant.mature_time = 25
-	broccoliPlant.preferred_seaons = ["WINTER"]
-	broccoliPlant.death_seasons = ["SUMMER"]
-	broccoliPlant.food_restored = 75
-	
-	foodPlants = [potatoPlant, tomatoPlant, wheatPlant, carrotPlant, broccoliPlant]
+	potatoPlant = {"mature_time": 30, "preferred_season": "SUMMER", "death_season": "WINTER", "food_restored": 60 }
+	tomatoPlant = {"mature_time": 45, "preferred_season": "SPRING", "death_season": "FALL", "food_restored": 90 }
+	wheatPlant = {"mature_time": 20, "preferred_season": "SUMMER", "death_season": "SPRING", "food_restored": 20 }
+	carrotPlant = {"mature_time": 60, "preferred_season": "SPRING", "death_season": "WINTER", "food_restored": 100 }
+	broccoliPlant = {"mature_time": 25, "preferred_season": "FALL", "death_season": "SUMMER", "food_restored": 75 }
 	
 #**********************************************************************************************************************
 
 
+func get_part_plant(index) -> Dictionary:
+	if index == 1:
+		return gearPlant
+	if index == 2:
+		return pistonPlant
+	if index == 3:
+		return bearingPlant
+	if index == 4:
+		return fuelPlant
+	if index == 5:
+		return springPlant
+	return {}
 
+func get_food_plant(index) -> Dictionary:
+	if index == 1:
+		return potatoPlant
+	if index == 2:
+		return tomatoPlant
+	if index == 3:
+		return wheatPlant
+	if index == 4:
+		return carrotPlant
+	if index == 5:
+		return broccoliPlant
+	return {}
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
