@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ccu45lnqeh7x0"]
+[gd_scene load_steps=14 format=3 uid="uid://ccu45lnqeh7x0"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_7arxs"]
 [ext_resource type="Theme" uid="uid://8kojskkw4y67" path="res://materials/theme.tres" id="1_ni4fc"]
@@ -10,6 +10,17 @@
 [ext_resource type="Texture2D" uid="uid://pbajh11eyu86" path="res://icons/icons8-fuel-gas-64.png" id="5_todq5"]
 [ext_resource type="Texture2D" uid="uid://bnb2mb22pj0ns" path="res://icons/icons8-bread-and-rye-50.png" id="6_ivdkp"]
 [ext_resource type="Texture2D" uid="uid://dw6skf20mo3lf" path="res://icons/icons8-spring-in-motion-50.png" id="6_o8dul"]
+[ext_resource type="SystemFont" uid="uid://c4dkrnrhy1e82" path="res://fonts/MainFont.tres" id="11_djnc3"]
+[ext_resource type="Script" path="res://scripts/hud_scripts/season_label.gd" id="11_hfpgl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3w2tg"]
+font = ExtResource("11_djnc3")
+font_size = 20
+outline_size = 8
+outline_color = Color(0.494118, 0.560784, 0.388235, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.447059)
+shadow_offset = Vector2(2, 2)
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -115,6 +126,18 @@ theme = ExtResource("1_ni4fc")
 icon = ExtResource("4_1yifo")
 icon_alignment = 1
 
+[node name="SeasonLabel" type="Label" parent="ProgressBar"]
+layout_mode = 0
+offset_left = 278.0
+offset_top = 37.0
+offset_right = 365.0
+offset_bottom = 76.0
+text = "Winter"
+label_settings = SubResource("LabelSettings_3w2tg")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("11_hfpgl")
+
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -127,5 +150,6 @@ grow_vertical = 0
 
 [node name="Timer" type="Timer" parent="."]
 
+[connection signal="season_change" from="." to="ProgressBar/SeasonLabel" method="_on_hud_season_change"]
 [connection signal="value_changed" from="ProgressBar" to="." method="_on_progress_bar_value_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
