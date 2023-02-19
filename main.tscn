@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dqmeg74pbb3fa" path="res://prefabs/Enviornment/tree_1.tscn" id="18_i7g21"]
 [ext_resource type="PackedScene" uid="uid://b8b0romd67c08" path="res://prefabs/Enviornment/dirt_path.tscn" id="19_id0mi"]
 [ext_resource type="PackedScene" uid="uid://dcx2lbx48l0s1" path="res://prefabs/Enviornment/tree_2.tscn" id="19_wurbd"]
-[ext_resource type="AudioStream" uid="uid://gm3se6eanrgl" path="res://sounds/cottagecore.mp3" id="21_jo4kc"]
+[ext_resource type="AudioStream" uid="uid://dcud0oe4516km" path="res://sounds/cottagecore.mp3" id="21_jo4kc"]
 [ext_resource type="AudioStream" uid="uid://iwiv04y4th4q" path="res://sounds/gamemusic.mp3" id="22_hhoiw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0rn0q"]
@@ -491,5 +491,6 @@ volume_db = -7.0
 
 [connection signal="start_game" from="StartMenu" to="." method="_on_start_menu_start_game"]
 [connection signal="start_game" from="StartMenu" to="Hud" method="_on_start_menu_start_game"]
+[connection signal="season_change" from="Hud" to="." method="_on_hud_season_change"]
 [connection signal="finished" from="Music" to="." method="_on_music_finished"]
 [connection signal="finished" from="Music2" to="." method="_on_music_2_finished"]

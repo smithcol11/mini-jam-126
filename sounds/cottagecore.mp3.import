@@ -2,7 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://gm3se6eanrgl"
+uid="uid://dcud0oe4516km"
 path="res://.godot/imported/cottagecore.mp3-959de318ce391de18a22ebb5893ecb46.mp3str"
 
 [deps]
@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/cottagecore.mp3-959de318ce391de18a22ebb5893ec
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
 bpm=0
 beat_count=0

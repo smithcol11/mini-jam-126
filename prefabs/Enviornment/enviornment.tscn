@@ -1,14 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cb2onshaynj25"]
+[gd_scene load_steps=5 format=3 uid="uid://cb2onshaynj25"]
 
 [ext_resource type="PackedScene" uid="uid://crdj0dwc8gra0" path="res://models/Enviornment.glb" id="1_u7lpl"]
 [ext_resource type="Material" uid="uid://d0g2eedhdr8lr" path="res://materials/ground_season_materials/winter_mat.tres" id="2_jb1wo"]
+[ext_resource type="Script" path="res://prefabs/Enviornment/enviornment.gd" id="2_wmm0d"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_txg5n"]
 size = Vector3(20, 1, 20)
 
 [node name="Enviornment" instance=ExtResource("1_u7lpl")]
+script = ExtResource("2_wmm0d")
 
 [node name="Enviornment2" parent="." index="0"]
-material_override = ExtResource("2_jb1wo")
 mesh = SubResource("BoxMesh_txg5n")
 surface_material_override/0 = ExtResource("2_jb1wo")

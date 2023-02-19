@@ -7,6 +7,10 @@ var icon_fall = preload("res://icons/icons8-autumn-50.png")
 
 var season = 1
 
+var icons = [icon_winter, icon_spring, icon_summer, icon_fall]
+
+signal season_change
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -20,7 +24,7 @@ func _on_timer_timeout():
 	pass # Replace with function body.
 
 func _on_progress_bar_value_changed(value):
-	if value == 100:
+	if value >= 90:
 		if season == 1:
 			$ProgressBar/Button7.icon = icon_spring
 			$ProgressBar/Button8.icon = icon_summer
@@ -36,7 +40,8 @@ func _on_progress_bar_value_changed(value):
 		season += 1
 		if season == 5: season = 1
 		$ProgressBar.value = 0
+		emit_signal("season_change", season)
 
 func _on_start_menu_start_game():
-	$Timer.start(1.01)
+	$Timer.start(.1)
 
