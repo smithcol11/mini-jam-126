@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8b0romd67c08"]
+
+[ext_resource type="PackedScene" uid="uid://xm0o5cpihewx" path="res://models/DirtPath.glb" id="1_65ait"]
+[ext_resource type="Material" uid="uid://d3anaxu0yqpu0" path="res://materials/color_pallete_material.tres" id="2_ko7h4"]
+
+[node name="DirtPath" instance=ExtResource("1_65ait")]
+
+[node name="DirtPath2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_ko7h4")
