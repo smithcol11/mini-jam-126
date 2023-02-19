@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://3ae54yl1qa0j"]
+[gd_scene load_steps=12 format=3 uid="uid://3ae54yl1qa0j"]
 
 [ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_1nccn"]
 [ext_resource type="Texture2D" uid="uid://d3o5qcbibrhb8" path="res://icons/icons8-start-64.png" id="1_5o7vv"]
@@ -7,7 +7,6 @@
 [ext_resource type="SystemFont" uid="uid://c4dkrnrhy1e82" path="res://fonts/MainFont.tres" id="5_7hgvb"]
 [ext_resource type="Theme" uid="uid://8kojskkw4y67" path="res://materials/theme.tres" id="5_rv7ra"]
 [ext_resource type="AudioStream" uid="uid://bay5vv8gsk5sx" path="res://sounds/menu_music.mp3" id="5_tfsdx"]
-[ext_resource type="AudioStream" uid="uid://dsd8el80y6u7y" path="res://sounds/beep.mp3" id="6_6slnq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4p2er"]
 shader = ExtResource("2_r8j25")
@@ -176,9 +175,6 @@ vertical_alignment = 1
 stream = ExtResource("5_tfsdx")
 volume_db = -7.0
 autoplay = true
-
-[node name="StartGameSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_6slnq")
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

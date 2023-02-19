@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://catx4c1hpypnn"]
+[gd_scene load_steps=5 format=3 uid="uid://ugnangso60we"]
 
-[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_5um8h"]
-[ext_resource type="LabelSettings" uid="uid://csmlc7xxldku6" path="res://label_styles/main_label_style.tres" id="2_sbwo4"]
+[ext_resource type="Script" path="res://prefabs/seed_picker_menu.gd" id="1_p8fn7"]
+[ext_resource type="LabelSettings" uid="uid://csmlc7xxldku6" path="res://label_styles/main_label_style.tres" id="2_05x56"]
+[ext_resource type="Theme" uid="uid://8kojskkw4y67" path="res://materials/theme.tres" id="3_h1grr"]
+[ext_resource type="Texture2D" uid="uid://b75rib7qxuh8y" path="res://icons/icons8-engineering-50.png" id="4_w7gc7"]
 
-[node name="PauseMenu" type="Control"]
+[node name="SeedPickerMenu" type="Control"]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -11,7 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_5um8h")
+script = ExtResource("1_p8fn7")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -36,21 +38,26 @@ theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "PAUSED"
-label_settings = ExtResource("2_sbwo4")
+text = "PICK 3 SEEDS"
+label_settings = ExtResource("2_05x56")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Control" type="Control" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GearSeedButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_h1grr")
+text = "0"
+icon = ExtResource("4_w7gc7")
+icon_alignment = 1
+
 [node name="ResumeButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "Resume Game"
-
-[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-text = "Quit"
+text = "BEGIN"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -9,13 +9,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if starting_game and !$StartGameSound.playing:
+	if starting_game:
 		start_game.emit()
 
 func _on_start_pressed():
-	$StartGameSound.play()
+	#$StartGameSound.play()
 	$MenuMusic.stop()
 	starting_game = true
+	
 
 func _on_quit_pressed():
 	pass # Replace with function body.

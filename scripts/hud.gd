@@ -6,7 +6,7 @@ var icon_summer = preload("res://icons/icons8-summer-50.png")
 var icon_fall = preload("res://icons/icons8-autumn-50.png")
 
 var season = 1
-var year = 1
+var year = 0
 
 var icons = [icon_winter, icon_spring, icon_summer, icon_fall]
 
@@ -15,8 +15,8 @@ signal year_change
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	pass
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
@@ -48,5 +48,7 @@ func _on_progress_bar_value_changed(value):
 		emit_signal("season_change", season)
 
 func _on_start_menu_start_game():
+	year = 1
+	emit_signal("year_change", year)
 	$Timer.start(.1)
 
