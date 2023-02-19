@@ -62,6 +62,9 @@ func _on_resume_button_pressed():
 	if (checkSelectedButtonCount() != 3):
 		get_tree().get_root().find_child("WarningLabel", true, false).visible = true
 	else:
+		add_selected_seeds_to_inventory()
+		print(seedInventory.get_part_seed_inventory())
+		print(seedInventory.get_food_seed_inventory())
 		self.is_paused = false
 
 func _on_hud_year_change(year):
@@ -81,31 +84,37 @@ func checkSelectedButtonCount() -> int:
 		
 func add_selected_seeds_to_inventory():
 	if (gearSeedButton.button_pressed == true):
-		addSeeds("gearSeeds")
+		addPartSeeds("gearSeeds")
 	if (pistonSeedButton.button_pressed == true):
-		addSeeds("pistonSeeds")
+		addPartSeeds("pistonSeeds")
 	if (bearingSeedButton.button_pressed == true):
-		addSeeds("bearingSeeds")
+		addPartSeeds("bearingSeeds")
 	if (fuelSeedButton.button_pressed == true):
-		addSeeds("fuelSeeds")
+		addPartSeeds("fuelSeeds")
 	if (springSeedButton.button_pressed == true):
-		addSeeds("springSeeds")
+		addPartSeeds("springSeeds")
 	if (potatoSeedButton.button_pressed == true):
-		addSeeds("potatoSeeds")
+		addFoodSeeds("potatoSeeds")
 	if (tomatoSeedButton.button_pressed == true):
-		addSeeds("tomatoSeeds")
+		addFoodSeeds("tomatoSeeds")
 	if (wheatSeedButton.button_pressed == true):
-		addSeeds("wheatSeeds")
+		addFoodSeeds("wheatSeeds")
 	if (carrotSeedButton.button_pressed == true):
-		addSeeds("carrotSeeds")
+		addFoodSeeds("carrotSeeds")
 	if (broccoliSeedButton.button_pressed == true):
-		addSeeds("broccoliSeeds")
+		addFoodSeeds("broccoliSeeds")
 		
-func addSeeds(seedName):
+func addPartSeeds(seedName):
 	var count = rng.randi_range(1, 5)
 	var partSeedDict = seedInventory.get_part_seed_inventory()
 	partSeedDict[seedName] = partSeedDict[seedName] + count
 	seedInventory.set_part_seed_inventory(partSeedDict)
+	
+func addFoodSeeds(seedName):
+	var count = rng.randi_range(1, 5)
+	var foodSeedDict = seedInventory.get_food_seed_inventory()
+	foodSeedDict[seedName] = foodSeedDict[seedName] + count
+	seedInventory.set_food_seed_inventory(foodSeedDict)
 
 func update_all_seed_descriptions():
 	var gearPlant = seedInventory.get_part_plant(1)
