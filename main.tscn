@@ -84,7 +84,6 @@ script = ExtResource("3_jdgnu")
 [node name="StartMenu" parent="." instance=ExtResource("4_f83tp")]
 
 [node name="Hud" parent="." instance=ExtResource("6_pumv5")]
-secondsPerDay = 0.1
 
 [node name="Enviornment" parent="." instance=ExtResource("5_quxs5")]
 

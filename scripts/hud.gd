@@ -1,6 +1,6 @@
 extends Control
 
-@export var secondsPerDay : float = 1 #wasn't working for Timer.Start(secondsPerDay)? changed to $Timer.start(1) 
+@export var seconds_per_day: float #wasn't working for Timer.Start(secondsPerDay)? changed to $Timer.start(1)
 
 var icon_winter = preload("res://icons/icons8-snowflake-50.png")
 var icon_spring = preload("res://icons/icons8-spring-50.png")
@@ -65,5 +65,5 @@ func _on_start_menu_start_game():
 	emit_signal("season_change", season)
 	emit_signal("year_change", year)
 	
-	$Timer.start(.01) #.1 for testing 1 for gameplay
+	$Timer.start(seconds_per_day) #.1 for testing 1 for gameplay
 
