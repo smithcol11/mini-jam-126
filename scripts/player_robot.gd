@@ -27,7 +27,4 @@ func get_random_path() -> Vector3:
 	return Vector3(rng.randf_range(xMinRange, xMaxRange), 0, rng.randf_range(yMinRange,yMaxRange))
 
 func _on_timer_timeout():
-	print("here")
 	target = get_random_path()
-	print(target)
-	
