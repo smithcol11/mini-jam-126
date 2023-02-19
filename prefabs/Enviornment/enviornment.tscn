@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cb2onshaynj25"]
+[gd_scene load_steps=6 format=3 uid="uid://cb2onshaynj25"]
 
 [ext_resource type="PackedScene" uid="uid://crdj0dwc8gra0" path="res://models/Enviornment.glb" id="1_u7lpl"]
 [ext_resource type="Material" uid="uid://d0g2eedhdr8lr" path="res://materials/ground_season_materials/winter_mat.tres" id="2_jb1wo"]
 [ext_resource type="Script" path="res://prefabs/Enviornment/enviornment.gd" id="2_wmm0d"]
+[ext_resource type="PackedScene" uid="uid://biqcxor17teqy" path="res://prefabs/terrain_geo.tscn" id="4_pjvto"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_txg5n"]
 size = Vector3(20, 4, 20)
@@ -14,3 +15,6 @@ script = ExtResource("2_wmm0d")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
 mesh = SubResource("BoxMesh_txg5n")
 surface_material_override/0 = ExtResource("2_jb1wo")
+
+[node name="terrain" parent="." index="1" instance=ExtResource("4_pjvto")]
+transform = Transform3D(-2.23365e-08, 0, -0.511, 0, 0.511, 0, 0.511, 0, -2.23365e-08, 0.322188, -0.136849, 0.0982304)

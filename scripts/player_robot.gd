@@ -20,7 +20,8 @@ func _ready():
 
 	
 func _process(delta):
-	look_at(target, Vector3(0, 1, 0))
+	if (target != transform.origin):
+		look_at(target, Vector3(0, 1, 0))
 	position = position.move_toward(target, delta * speed)
 	
 func get_random_path() -> Vector3:

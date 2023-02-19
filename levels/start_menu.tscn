@@ -151,7 +151,7 @@ grow_vertical = 0
 theme = ExtResource("5_rv7ra")
 theme_type_variation = &"HeaderLarge"
 theme_override_font_sizes/font_size = 32
-text = "Created By: Levi, Cody, and Colin"
+text = "Created By: Levi, Codey, and Colin"
 label_settings = SubResource("LabelSettings_hn71v")
 
 [node name="Label" type="Label" parent="."]

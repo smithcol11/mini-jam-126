@@ -1,5 +1,7 @@
 extends Control
 
+@export var secondsPerDay : float = 1
+
 var icon_winter = preload("res://icons/icons8-snowflake-50.png")
 var icon_spring = preload("res://icons/icons8-spring-50.png")
 var icon_summer = preload("res://icons/icons8-summer-50.png")
@@ -50,5 +52,5 @@ func _on_progress_bar_value_changed(value):
 func _on_start_menu_start_game():
 	year = 1
 	emit_signal("year_change", year)
-	$Timer.start(.1)
+	$Timer.start(secondsPerDay)
 
