@@ -1,11 +1,14 @@
 extends Control
 
-@export var seconds_per_day: float #wasn't working for Timer.Start(secondsPerDay)? changed to $Timer.start(1)
+@export var secondsPerDay : float = 1 #wasn't working for Timer.Start(secondsPerDay)? changed to $Timer.start(1) 
+@export var usedFoodPerDay : float = 1
 
 var icon_winter = preload("res://icons/icons8-snowflake-50.png")
 var icon_spring = preload("res://icons/icons8-spring-50.png")
 var icon_summer = preload("res://icons/icons8-summer-50.png")
 var icon_fall = preload("res://icons/icons8-autumn-50.png")
+
+var foodBar : Node
 
 var season = 0
 var year = 0
@@ -20,7 +23,7 @@ signal game_over
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	foodBar = $FoodSupplyBar
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -29,6 +32,7 @@ func _process(delta):
 func _on_timer_timeout():
 	day += 1
 	$ProgressBar.value = day
+	foodBar.deplete_food(usedFoodPerDay)
 	emit_signal("day_change", day)
 
 func _on_progress_bar_value_changed(value):
@@ -65,5 +69,5 @@ func _on_start_menu_start_game():
 	emit_signal("season_change", season)
 	emit_signal("year_change", year)
 	
-	$Timer.start(seconds_per_day) #.1 for testing 1 for gameplay
+	$Timer.start(secondsPerDay)
 

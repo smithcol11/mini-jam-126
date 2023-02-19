@@ -6,6 +6,8 @@ extends Camera3D
 @export var smallestZoom : float = 20.0
 @export var largestZoom : float = 80.0
 
+signal set_camera_signal
+
 var initialPosition : Vector3
 var zoomVal : float = 1.0 # zoom between 0.0 and 1.0
 
@@ -13,7 +15,9 @@ var enableControls = false;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	emit_signal("set_camera_signal", self)
 	initialPosition = transform.origin
+	
 
 func evaluateScreenSize(zoom):
 	var x = zoom

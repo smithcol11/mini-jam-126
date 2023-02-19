@@ -249,7 +249,6 @@ grow_vertical = 0
 
 [node name="Timer" type="Timer" parent="."]
 
-[connection signal="day_change" from="." to="FoodSupplyBar" method="_on_hud_day_change"]
 [connection signal="season_change" from="." to="ProgressBar/SeasonLabel" method="_on_hud_season_change"]
 [connection signal="year_change" from="." to="ProgressBar/SeasonLabel" method="_on_hud_year_change"]
 [connection signal="value_changed" from="ProgressBar" to="." method="_on_progress_bar_value_changed"]

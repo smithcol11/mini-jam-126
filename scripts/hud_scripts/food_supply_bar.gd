@@ -1,8 +1,14 @@
 extends Button
 
+func deplete_food(amount):
+	$ProgressBar.value = $ProgressBar.value - amount
+	text = str($ProgressBar.value)
+	if ($ProgressBar.value == 0):
+		get_parent().emit_signal("game_over")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	text = str($ProgressBar.value)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
