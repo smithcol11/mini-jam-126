@@ -27,16 +27,18 @@
 [ext_resource type="PackedScene" uid="uid://ugnangso60we" path="res://prefabs/seed_picker_menu.tscn" id="25_4qfcd"]
 [ext_resource type="AudioStream" uid="uid://dsd8el80y6u7y" path="res://sounds/beep.mp3" id="26_s3y85"]
 [ext_resource type="Script" path="res://scripts/sound_manager.gd" id="27_2ah65"]
+[ext_resource type="PackedScene" uid="uid://ny7225a3y5u1" path="res://prefabs/PartPlants/gear_part_plant.tscn" id="28_t0vs5"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0rn0q"]
-
-[sub_resource type="Sky" id="Sky_frcpr"]
-sky_material = SubResource("ProceduralSkyMaterial_0rn0q")
+[sub_resource type="Sky" id="Sky_67ktu"]
 
 [sub_resource type="Environment" id="Environment_3q5fa"]
-background_mode = 2
+background_mode = 1
+background_color = Color(0.615686, 0.631373, 0.541176, 1)
 background_energy_multiplier = 1.5
-sky = SubResource("Sky_frcpr")
+sky = SubResource("Sky_67ktu")
+ambient_light_source = 2
+ambient_light_color = Color(0.780392, 0.694118, 0.584314, 1)
+ambient_light_energy = 2.29
 ssil_enabled = true
 volumetric_fog_albedo = Color(0.439216, 0.439216, 0.439216, 1)
 adjustment_enabled = true
@@ -56,9 +58,11 @@ projection = 1
 fov = 80.0
 size = 40.0
 script = ExtResource("1_8sg2u")
-smallestPanSpeed = 20.0
-largestPanSpeed = 50.0
+smallestPanSpeed = 5.0
+largestPanSpeed = 25.0
 zoomSpeed = 4.0
+smallestZoom = 5.0
+largestZoom = 25.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.0048, 35.0826, 30.1681)
@@ -516,6 +520,9 @@ script = ExtResource("27_2ah65")
 
 [node name="StartGameSound" type="AudioStreamPlayer" parent="SoundManager"]
 stream = ExtResource("26_s3y85")
+
+[node name="GearPartPlant" parent="." instance=ExtResource("28_t0vs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.95672, 1.71628, 2.06086)
 
 [connection signal="start_game" from="StartMenu" to="." method="_on_start_menu_start_game"]
 [connection signal="start_game" from="StartMenu" to="Hud" method="_on_start_menu_start_game"]

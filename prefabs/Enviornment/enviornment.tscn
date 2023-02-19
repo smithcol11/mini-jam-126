@@ -5,11 +5,12 @@
 [ext_resource type="Script" path="res://prefabs/Enviornment/enviornment.gd" id="2_wmm0d"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_txg5n"]
-size = Vector3(20, 1, 20)
+size = Vector3(20, 4, 20)
 
 [node name="Enviornment" instance=ExtResource("1_u7lpl")]
 script = ExtResource("2_wmm0d")
 
 [node name="Enviornment2" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
 mesh = SubResource("BoxMesh_txg5n")
 surface_material_override/0 = ExtResource("2_jb1wo")

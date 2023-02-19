@@ -7,7 +7,7 @@ extends Camera3D
 @export var largestZoom : float = 80.0
 
 var initialPosition : Vector3
-var zoomVal : float # zoom between 0.0 and 1.0
+var zoomVal : float = 1.0 # zoom between 0.0 and 1.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
