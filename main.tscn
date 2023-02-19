@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://t08q634nsl1f"]
+[gd_scene load_steps=10 format=3 uid="uid://t08q634nsl1f"]
 
 [ext_resource type="Script" path="res://scripts/camera_controller.gd" id="1_8sg2u"]
 [ext_resource type="PackedScene" uid="uid://bcmo5lh5ir8f4" path="res://levels/static_env.tscn" id="1_bi6lc"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_hheku"]
 [ext_resource type="PackedScene" uid="uid://bv0gcc0sgtk1d" path="res://prefabs/player_robot.tscn" id="3_lvfjn"]
 [ext_resource type="PackedScene" uid="uid://3ae54yl1qa0j" path="res://levels/start_menu.tscn" id="4_f83tp"]
+[ext_resource type="PackedScene" uid="uid://ccu45lnqeh7x0" path="res://levels/hud.tscn" id="6_pumv5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0rn0q"]
 
@@ -54,4 +55,7 @@ transform = Transform3D(-0.707107, 0.5, -0.5, 0, 0.707107, 0.707107, 0.707107, 0
 
 [node name="StartMenu" parent="." instance=ExtResource("4_f83tp")]
 
+[node name="Hud" parent="." instance=ExtResource("6_pumv5")]
+
 [connection signal="start_game" from="StartMenu" to="." method="_on_start_menu_start_game"]
+[connection signal="start_game" from="StartMenu" to="Hud" method="_on_start_menu_start_game"]
