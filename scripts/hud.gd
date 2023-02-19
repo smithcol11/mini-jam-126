@@ -69,5 +69,5 @@ func _on_start_menu_start_game():
 	emit_signal("season_change", season)
 	emit_signal("year_change", year)
 	
-	$Timer.start(secondsPerDay) #.1 for testing 1 for gameplay
+	$Timer.start(secondsPerDay)
 

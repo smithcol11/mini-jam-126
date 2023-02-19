@@ -28,7 +28,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.623529, 0.945098, 0.65098, 0.254902)
+color = Color(0.231373, 0.478431, 0.192157, 0.898039)
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -88,7 +88,7 @@ theme = ExtResource("3_h1grr")
 icon = ExtResource("5_yd2hw")
 icon_alignment = 1
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxPartPlants/VBoxContainer2"]
+[node name="PistonSeedLabel" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxPartPlants/VBoxContainer2"]
 layout_mode = 2
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxPartPlants"]
@@ -101,7 +101,7 @@ theme = ExtResource("3_h1grr")
 icon = ExtResource("6_qh47o")
 icon_alignment = 1
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxPartPlants/VBoxContainer3"]
+[node name="BearingSeedLabel" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxPartPlants/VBoxContainer3"]
 layout_mode = 2
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxPartPlants"]
@@ -113,7 +113,7 @@ theme = ExtResource("3_h1grr")
 icon = ExtResource("7_e7itv")
 icon_alignment = 1
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxPartPlants/VBoxContainer4"]
+[node name="FuelSeedLabel" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxPartPlants/VBoxContainer4"]
 layout_mode = 2
 
 [node name="VBoxContainer5" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxPartPlants"]
@@ -125,7 +125,7 @@ theme = ExtResource("3_h1grr")
 icon = ExtResource("8_uifaa")
 icon_alignment = 1
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxPartPlants/VBoxContainer5"]
+[node name="SpringSeedLabel" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxPartPlants/VBoxContainer5"]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3"]
@@ -159,7 +159,7 @@ text = "Potato"
 icon = ExtResource("9_ub5ja")
 icon_alignment = 1
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer"]
+[node name="PotatoSeedLabel" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer"]
 layout_mode = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants"]
@@ -174,7 +174,7 @@ text = "Tomato"
 icon = ExtResource("9_ub5ja")
 icon_alignment = 1
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer2"]
+[node name="TomatoSeedLabel" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer2"]
 layout_mode = 2
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants"]
@@ -190,7 +190,7 @@ text = "Wheat"
 icon = ExtResource("9_ub5ja")
 icon_alignment = 1
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer3"]
+[node name="WheatSeedLabel" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer3"]
 layout_mode = 2
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants"]
@@ -205,7 +205,7 @@ text = "Carrot"
 icon = ExtResource("9_ub5ja")
 icon_alignment = 1
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer4"]
+[node name="CarrotSeedLabel" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer4"]
 layout_mode = 2
 
 [node name="VBoxContainer5" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants"]
@@ -220,7 +220,7 @@ text = "Broccoli"
 icon = ExtResource("9_ub5ja")
 icon_alignment = 1
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer5"]
+[node name="BroccoliSeedLabel" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer5"]
 layout_mode = 2
 
 [node name="ResumeButton" type="Button" parent="CenterContainer/VBoxContainer"]
