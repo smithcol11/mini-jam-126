@@ -10,7 +10,7 @@ var wheatPlant = preload("res://prefabs/FoodPlants/wheat_part_plant.tscn")
 
 var gearPlant = preload("res://prefabs/PartPlants/gear_part_plant.tscn")
 var pistonPlant = preload("res://prefabs/PartPlants/piston_part_plant.tscn")
-var bearingPlant = preload("res://prefabs/PartPlants/piston_part_plant.tscn")
+var bearingPlant = preload("res://prefabs/PartPlants/bearing_part_plant.tscn")
 var fuelPlant = preload("res://prefabs/PartPlants/fuel_part_plant.tscn")
 var springPlant = preload("res://prefabs/PartPlants/spring_part_plant.tscn")
 

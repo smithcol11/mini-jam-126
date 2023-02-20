@@ -1,9 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://drm40frwggctf"]
+[gd_scene load_steps=5 format=3 uid="uid://drm40frwggctf"]
 
 [ext_resource type="PackedScene" uid="uid://d2s2qanw6wacl" path="res://models/PartPlantBox.glb" id="1_h4nna"]
+[ext_resource type="Script" path="res://scripts/food_planter.gd" id="2_clbv0"]
 [ext_resource type="Material" uid="uid://d3anaxu0yqpu0" path="res://materials/color_pallete_material.tres" id="2_xq6cv"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ta1q"]
+
 [node name="PartPlantBox" instance=ExtResource("1_h4nna")]
+script = ExtResource("2_clbv0")
 
 [node name="PlantBox" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_xq6cv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_0ta1q")

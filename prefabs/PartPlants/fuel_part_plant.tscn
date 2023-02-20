@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://d4dqi84vdklks"]
+[gd_scene load_steps=4 format=3 uid="uid://d4dqi84vdklks"]
 
 [ext_resource type="PackedScene" uid="uid://cywwc14dn3qeg" path="res://models/part_plants/FuelPartPlant.glb" id="1_l4mgv"]
+[ext_resource type="Script" path="res://prefabs/FoodPlants/plant_growth.gd" id="2_atadn"]
 [ext_resource type="Material" uid="uid://d3anaxu0yqpu0" path="res://materials/color_pallete_material.tres" id="2_homes"]
 
 [node name="FuelPartPlant" instance=ExtResource("1_l4mgv")]
+script = ExtResource("2_atadn")
 
 [node name="FuelPartPlant2" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_homes")

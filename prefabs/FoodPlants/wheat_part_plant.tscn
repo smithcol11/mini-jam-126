@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3cbhv3la1sop"]
+[gd_scene load_steps=4 format=3 uid="uid://c3cbhv3la1sop"]
 
 [ext_resource type="PackedScene" uid="uid://blsun5kbjr8yv" path="res://models/food_plants/WheatPartPlant.glb" id="1_7j17i"]
+[ext_resource type="Script" path="res://prefabs/FoodPlants/plant_growth.gd" id="2_0q2lv"]
 [ext_resource type="Material" uid="uid://d3anaxu0yqpu0" path="res://materials/color_pallete_material.tres" id="2_s7rcs"]
 
 [node name="WheatPartPlant" instance=ExtResource("1_7j17i")]
+script = ExtResource("2_0q2lv")
 
 [node name="WheatFoodPlant" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_s7rcs")

@@ -48,6 +48,13 @@ var buttons
 
 var seedInventory
 
+#part amount buttons
+var gearAmount
+var bearingAmount
+var pistonAmount
+var springAmount
+var fuelAmount
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	seedInventory = get_tree().get_root().find_child("SeedInventory", true, false)
@@ -64,11 +71,48 @@ func _ready():
 	carrotBtn = get_tree().get_root().find_child("carrot", true, false)
 	broccoliBtn = get_tree().get_root().find_child("broccoli", true, false)
 	
+	gearAmount = find_child("GearAmount", false, true)
+	bearingAmount = find_child("BearingAmount", false, true)
+	pistonAmount = find_child("PistonAmount", false, true)
+	springAmount = find_child("SpringAmount", false, true)
+	fuelAmount = find_child("FuelAmount", false, true)
+	
 	buttons = [gearBtn, bearingBtn, pistonBtn, springBtn, fuelBtn, potatoBtn, tomatoBtn, wheatBtn, carrotBtn, broccoliBtn]
 	
 	foodBar = $FoodSupplyBar
+
+func add_health(amount):
+	find_child("FoodSupplyBar", false, true).add_food(amount)
 	
-		
+func add_gear(amount):
+	num_of_gears += amount
+	gearAmount.text = str(num_of_gears, "/100")
+	check_win_condition()
+
+func add_piston(amount):
+	num_of_pistons += amount
+	pistonAmount.text = str(num_of_pistons, "/50")
+	check_win_condition()
+
+func add_bearing(amount):
+	num_of_bearings += amount
+	bearingAmount.text = str(num_of_bearings, "/25")
+	check_win_condition()
+	
+func add_fuel(amount):
+	num_of_fuel += amount
+	fuelAmount.text = str(num_of_fuel, "/50")
+	check_win_condition()
+	
+func add_spring(amount):
+	num_of_springs += amount
+	springAmount.text = str(num_of_springs, "/10")
+	check_win_condition()
+	
+func check_win_condition():
+	if num_of_gears >= 100 && num_of_pistons >= 50 && num_of_bearings >= 25 && num_of_fuel >= 50 && num_of_springs >= 10:
+		print("you win the game!")
+
 func deselect_other_buttons(selectedBtnIndex):
 	for index in 10:
 		if index != selectedBtnIndex:
@@ -159,7 +203,6 @@ func _on_carrot_toggled(button_pressed):
 
 func _on_broccoli_toggled(button_pressed):
 	deselect_other_buttons(9)
-
 
 func _on_seed_inventory_seed_count_changed():
 	print("here")

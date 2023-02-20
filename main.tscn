@@ -852,3 +852,8 @@ script = ExtResource("31_6xi6v")
 [connection signal="set_plant_repo" from="PlantRepo" to="Enviornment/PlantBoxes/FoodBoxes/GardenBox3" method="_on_plant_repo_set_plant_repo"]
 [connection signal="set_plant_repo" from="PlantRepo" to="Enviornment/PlantBoxes/FoodBoxes/GardenBox4" method="_on_plant_repo_set_plant_repo"]
 [connection signal="set_plant_repo" from="PlantRepo" to="Enviornment/PlantBoxes/FoodBoxes/GardenBox5" method="_on_plant_repo_set_plant_repo"]
+[connection signal="set_plant_repo" from="PlantRepo" to="Enviornment/PlantBoxes/PartBoxes/PartPlantBox1" method="_on_plant_repo_set_plant_repo"]
+[connection signal="set_plant_repo" from="PlantRepo" to="Enviornment/PlantBoxes/PartBoxes/PartPlantBox2" method="_on_plant_repo_set_plant_repo"]
+[connection signal="set_plant_repo" from="PlantRepo" to="Enviornment/PlantBoxes/PartBoxes/PartPlantBox3" method="_on_plant_repo_set_plant_repo"]
+[connection signal="set_plant_repo" from="PlantRepo" to="Enviornment/PlantBoxes/PartBoxes/PartPlantBox4" method="_on_plant_repo_set_plant_repo"]
+[connection signal="set_plant_repo" from="PlantRepo" to="Enviornment/PlantBoxes/PartBoxes/PartPlantBox5" method="_on_plant_repo_set_plant_repo"]
