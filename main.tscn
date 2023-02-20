@@ -852,6 +852,7 @@ visible = false
 [connection signal="year_change" from="Hud" to="SeedPickerMenu" method="_on_hud_year_change"]
 [connection signal="finished" from="Music" to="." method="_on_music_finished"]
 [connection signal="finished" from="Music2" to="." method="_on_music_2_finished"]
+[connection signal="visibility_changed" from="SeedPickerMenu" to="SeedPickerMenu" method="_on_visibility_changed"]
 [connection signal="set_plant_repo" from="PlantRepo" to="Enviornment/PlantBoxes/FoodBoxes/GardenBox1" method="_on_plant_repo_set_plant_repo"]
 [connection signal="set_plant_repo" from="PlantRepo" to="Enviornment/PlantBoxes/FoodBoxes/GardenBox2" method="_on_plant_repo_set_plant_repo"]
 [connection signal="set_plant_repo" from="PlantRepo" to="Enviornment/PlantBoxes/FoodBoxes/GardenBox3" method="_on_plant_repo_set_plant_repo"]
