@@ -32,18 +32,18 @@ func _ready():
 	foodSeedInventory = {"potatoSeeds": 0, "tomatoSeeds": 0, "wheatSeeds": 0, "carrotSeeds": 0, "broccoliSeeds": 0}
 	
 	#Setup part plants
-	gearPlant = {"ID": 1, "yieldMin": 10, "yieldMax": 25, "mature_time": 15}
+	gearPlant = {"ID": 1, "yieldMin": 10, "yieldMax": 25, "mature_time": 65}
 	pistonPlant = {"ID": 2, "yieldMin": 5, "yieldMax": 15, "mature_time": 10}
-	bearingPlant = {"ID": 3, "yieldMin": 5, "yieldMax": 10, "mature_time": 30}
+	bearingPlant = {"ID": 3, "yieldMin": 5, "yieldMax": 10, "mature_time": 70}
 	fuelPlant = {"ID": 4, "yieldMin": 5, "yieldMax": 15, "mature_time": 20}
 	springPlant = {"ID": 5, "yieldMin": 1, "yieldMax": 2, "mature_time": 25}
 	
 	#setup food plants
 	potatoPlant = {"ID": 6, "mature_time": 30, "preferred_season": "SUMMER", "death_season": "WINTER", "food_restored": 60 }
 	tomatoPlant = {"ID": 7, "mature_time": 45, "preferred_season": "SPRING", "death_season": "FALL", "food_restored": 90 }
-	wheatPlant = {"ID": 8, "mature_time": 20, "preferred_season": "SUMMER", "death_season": "SPRING", "food_restored": 20 }
+	wheatPlant = {"ID": 8, "mature_time": 80, "preferred_season": "SUMMER", "death_season": "SPRING", "food_restored": 20 }
 	carrotPlant = {"ID": 9, "mature_time": 60, "preferred_season": "SPRING", "death_season": "WINTER", "food_restored": 100 }
-	broccoliPlant = {"ID": 10, "mature_time": 25, "preferred_season": "FALL", "death_season": "SUMMER", "food_restored": 75 }
+	broccoliPlant = {"ID": 10, "mature_time": 45, "preferred_season": "FALL", "death_season": "SUMMER", "food_restored": 75 }
 	
 #**********************************************************************************************************************
 

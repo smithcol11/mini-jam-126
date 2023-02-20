@@ -1,5 +1,5 @@
 extends Node3D
-
+var rng = RandomNumberGenerator.new()
 @export var growthDistance : float = 0.5
 var plantData
 var distancePerDay
@@ -32,7 +32,19 @@ func _on_hud_day_change(day):
 			hud.add_health(plantData["food_restored"])
 			
 		if plantData["ID"] == 1:
-			#gear plant:
+			var amount = rng.randi_range(plantData["yieldMin"], plantData["yieldMax"])
+			hud.add_gear(amount)
+		if plantData["ID"] == 2:
+			var amount = rng.randi_range(plantData["yieldMin"], plantData["yieldMax"])
+			hud.add_piston(amount)
+		if plantData["ID"] == 3:
+			var amount = rng.randi_range(plantData["yieldMin"], plantData["yieldMax"])
+			hud.add_bearing(amount)
+		if plantData["ID"] == 4:
+			var amount = rng.randi_range(plantData["yieldMin"], plantData["yieldMax"])
+			hud.add_fuel(amount)
+		if plantData["ID"] == 5:
+			var amount = rng.randi_range(plantData["yieldMin"], plantData["yieldMax"])
+			hud.add_spring(amount)
 			
-			pass
 		queue_free()

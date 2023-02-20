@@ -111,7 +111,8 @@ func add_spring(amount):
 	
 func check_win_condition():
 	if num_of_gears >= 100 && num_of_pistons >= 50 && num_of_bearings >= 25 && num_of_fuel >= 50 && num_of_springs >= 10:
-		print("you win the game!")
+		print("you win!")
+		win_condition = true
 
 func deselect_other_buttons(selectedBtnIndex):
 	for index in 10:
