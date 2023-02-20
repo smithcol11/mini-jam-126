@@ -22,3 +22,6 @@ func _on_music_2_finished():
 
 func _on_hud_season_change(season):
 	$Enviornment.change_season(season)
+
+func _on_hud_win_game():
+	$Enviornment/RocketShip/AnimationPlayer.play("take_off")

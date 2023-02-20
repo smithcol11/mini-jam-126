@@ -3,6 +3,8 @@ extends Control
 @export var secondsPerDay : float = 1 #wasn't working for Timer.Start(secondsPerDay)? changed to $Timer.start(1) 
 @export var usedFoodPerDay : float = 1
 
+signal win_game
+
 var icon_winter = preload("res://icons/icons8-snowflake-50.png")
 var icon_spring = preload("res://icons/icons8-spring-50.png")
 var icon_summer = preload("res://icons/icons8-summer-50.png")
@@ -13,6 +15,14 @@ var foodBar : Node
 var season = 0
 var year = 0
 var day = 0
+
+var win_condition = false
+
+var num_of_gears = 0 # max 100
+var num_of_bearings = 0 # max 50
+var num_of_pistons = 0 # max 25
+var num_of_springs = 0 # max 10
+var num_of_fuel = 0 # max 50
 
 var icons = [icon_winter, icon_spring, icon_summer, icon_fall]
 
@@ -26,8 +36,10 @@ func _ready():
 	foodBar = $FoodSupplyBar
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _physics_process(delta):
+	if win_condition:
+		$Timer.stop()
+		win_game.emit()
 
 func _on_timer_timeout():
 	day += 1
