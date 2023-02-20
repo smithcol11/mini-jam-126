@@ -833,6 +833,7 @@ script = ExtResource("30_q6hiw")
 [node name="WorldClicker" type="Node3D" parent="."]
 script = ExtResource("31_6xi6v")
 
+[connection signal="seed_count_changed" from="SeedInventory" to="Hud" method="_on_seed_inventory_seed_count_changed"]
 [connection signal="set_camera_signal" from="Camera3D" to="WorldClicker" method="_on_camera_3d_set_camera_signal"]
 [connection signal="start_game" from="StartMenu" to="." method="_on_start_menu_start_game"]
 [connection signal="start_game" from="StartMenu" to="Camera3D" method="_on_start_menu_start_game"]

@@ -23,6 +23,8 @@ var broccoliPlant
 var partSeedInventory = {}
 var foodSeedInventory = {}
 
+signal seed_count_changed
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -53,9 +55,11 @@ func get_food_seed_inventory() -> Dictionary:
 	
 func set_food_seed_inventory(foodInventory):
 	foodSeedInventory = foodInventory
+	emit_signal("seed_count_changed")
 	
 func set_part_seed_inventory(partInventory):
 	partSeedInventory = partInventory
+	emit_signal("seed_count_changed")
 
 func get_part_plant(index) -> Dictionary:
 	if index == 1:
@@ -104,47 +108,58 @@ func get_spring_seeds() -> int:
 	return partSeedInventory["springSeeds"]
 	
 func get_potato_seeds() -> int:
-	return partSeedInventory["potatoSeeds"]
+	return foodSeedInventory["potatoSeeds"]
 	
 func get_tomato_seeds() -> int:
-	return partSeedInventory["tomatoSeeds"]
+	return foodSeedInventory["tomatoSeeds"]
 	
 func get_wheat_seeds() -> int:
-	return partSeedInventory["wheatSeeds"]
+	return foodSeedInventory["wheatSeeds"]
 	
 func get_carrot_seeds() -> int:
-	return partSeedInventory["carrotSeeds"]
+	return foodSeedInventory["carrotSeeds"]
 
 func get_broccoli_seeds() -> int:
-	return partSeedInventory["broccoliSeeds"]
+	return foodSeedInventory["broccoliSeeds"]
 	
 #Seed setters
 func add_gear_seeds(seedCount):
 	partSeedInventory["gearSeeds"] = partSeedInventory["gearSeeds"] + seedCount
+	emit_signal("seed_count_changed")
 	
 func add_piston_seeds(seedCount):
 	partSeedInventory["pistonSeeds"] = partSeedInventory["pistonSeeds"] + seedCount
+	emit_signal("seed_count_changed")	
 	
 func add_bearing_seeds(seedCount):
 	partSeedInventory["bearingSeeds"] = partSeedInventory["bearingSeeds"] + seedCount
+	emit_signal("seed_count_changed")
 	
 func add_fuel_seeds(seedCount):
 	partSeedInventory["fuelSeeds"] = partSeedInventory["fuelSeeds"] + seedCount
-
+	emit_signal("seed_count_changed")
+	
 func add_spring_seeds(seedCount):
 	partSeedInventory["springSeeds"] = partSeedInventory["springSeeds"] + seedCount
+	emit_signal("seed_count_changed")
 	
 func add_potato_seeds(seedCount):
-	partSeedInventory["potatoSeeds"] = partSeedInventory["potatoSeeds"] + seedCount
+	foodSeedInventory["potatoSeeds"] = foodSeedInventory["potatoSeeds"] + seedCount
+	emit_signal("seed_count_changed")
 	
 func add_tomato_seeds(seedCount):
-	partSeedInventory["tomatoSeeds"] = partSeedInventory["tomatoSeeds"] + seedCount
+	foodSeedInventory["tomatoSeeds"] = foodSeedInventory["tomatoSeeds"] + seedCount
+	emit_signal("seed_count_changed")
 	
 func add_wheat_seeds(seedCount):
-	partSeedInventory["wheatSeeds"] = partSeedInventory["wheatSeeds"] + seedCount
+	foodSeedInventory["wheatSeeds"] = foodSeedInventory["wheatSeeds"] + seedCount
+	emit_signal("seed_count_changed")
 	
 func add_carrot_seeds(seedCount):
-	partSeedInventory["carrotSeeds"] = partSeedInventory["carrotSeeds"] + seedCount
+	foodSeedInventory["carrotSeeds"] = foodSeedInventory["carrotSeeds"] + seedCount
+	emit_signal("seed_count_changed")
 
 func add_broccoli_seeds(seedCount):
-	partSeedInventory["broccoliSeeds"] = partSeedInventory["broccoliSeeds"] + seedCount
+	foodSeedInventory["broccoliSeeds"] = foodSeedInventory["broccoliSeeds"] + seedCount
+	emit_signal("seed_count_changed")
+	
