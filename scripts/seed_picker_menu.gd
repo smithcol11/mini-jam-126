@@ -139,3 +139,48 @@ func update_all_seed_descriptions():
 	updateFoodSeedLabel("WheatSeedLabel", wheatPlant)
 	updateFoodSeedLabel("CarrotSeedLabel", carrotPlant)
 	updateFoodSeedLabel("BroccoliSeedLabel", broccoliPlant)
+
+func enable_all_buttons():
+	for btn in partSeedButtonArray:
+		btn.disabled = false
+	for btn in foodSeedButtonArray:
+		btn.disabled = false
+
+func _on_visibility_changed():
+	enable_all_buttons()
+	disable_button(rng.randi_range(1,10))
+	disable_button(rng.randi_range(1,10))
+	disable_button(rng.randi_range(1,10))
+	disable_button(rng.randi_range(1,10))
+	
+func disable_button(index):
+	if index == 1:
+		gearSeedButton.disabled = true
+		gearSeedButton.button_pressed = false
+	if index == 2:
+		pistonSeedButton.disabled = true
+		pistonSeedButton.button_pressed = false
+	if index == 3:
+		bearingSeedButton.disabled = true
+		bearingSeedButton.button_pressed = false
+	if index == 4:
+		fuelSeedButton.disabled = true
+		fuelSeedButton.button_pressed = false
+	if index == 5:
+		springSeedButton.disabled = true
+		springSeedButton.button_pressed = false
+	if index == 6:
+		potatoSeedButton.disabled = true
+		potatoSeedButton.button_pressed = false
+	if index == 7:
+		tomatoSeedButton.disabled = true
+		tomatoSeedButton.button_pressed = false
+	if index == 8:
+		wheatSeedButton.disabled = true
+		wheatSeedButton.button_pressed = false
+	if index == 9:
+		carrotSeedButton.disabled = true
+		carrotSeedButton.button_pressed = false
+	if index == 10:
+		broccoliSeedButton.disabled = true
+		broccoliSeedButton.button_pressed = false

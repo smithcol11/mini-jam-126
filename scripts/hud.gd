@@ -236,7 +236,8 @@ func update_button_values():
 	buttons[8].text = str(seedInventory.get_carrot_seeds())
 	buttons[9].text = str(seedInventory.get_broccoli_seeds())
 
-
 func _on_button_pressed():
 	$Timer.wait_time = seasonSkipSecondsPerDay
 	
+func get_season() -> int:
+	return season
