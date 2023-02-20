@@ -179,6 +179,7 @@ script = ExtResource("3_jdgnu")
 transform = Transform3D(-0.0427401, 0, 0.660746, 0, 0.662127, 0, -0.660746, 0, -0.0427401, -2.27293, 0.550639, -7.46473)
 
 [node name="RocketShip" parent="Enviornment" instance=ExtResource("7_sshfa")]
+process_mode = 3
 transform = Transform3D(0.942313, 0, -0.410199, 0, 1.02772, 0, 0.410199, 0, 0.942313, -7.17985, 2.43747, 0)
 
 [node name="PlantBoxes" type="Node3D" parent="Enviornment"]
