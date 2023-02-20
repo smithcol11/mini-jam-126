@@ -1,7 +1,43 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0q6kshimo8u"]
+[gd_scene load_steps=7 format=3 uid="uid://b0q6kshimo8u"]
 
 [ext_resource type="PackedScene" uid="uid://pwudex7ima2r" path="res://models/RocketShip.glb" id="1_wko8p"]
 [ext_resource type="Material" uid="uid://d3anaxu0yqpu0" path="res://materials/color_pallete_material.tres" id="2_xclqw"]
+[ext_resource type="PackedScene" uid="uid://c44ki2jdm64lk" path="res://prefabs/fire.tscn" id="3_t851m"]
+
+[sub_resource type="Animation" id="Animation_ckjoj"]
+resource_name = "take_off"
+length = 3.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RocketShip2:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 20, 0, -26, 0.25, 0),
+"times": PackedFloat32Array(0, 3)
+}
+
+[sub_resource type="Animation" id="Animation_hhrg0"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RocketShip2:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k4r2o"]
+_data = {
+"RESET": SubResource("Animation_hhrg0"),
+"take_off": SubResource("Animation_ckjoj")
+}
 
 [node name="RocketShip" instance=ExtResource("1_wko8p")]
 
@@ -22,3 +58,12 @@ surface_material_override/0 = ExtResource("2_xclqw")
 
 [node name="Spring001" parent="RocketShip2/Rocket" index="4"]
 surface_material_override/0 = ExtResource("2_xclqw")
+
+[node name="Fire" parent="RocketShip2" index="1" instance=ExtResource("3_t851m")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.890163, 0)
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_k4r2o")
+}

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://c44ki2jdm64lk"]
+
+[ext_resource type="PackedScene" uid="uid://cpec86e4vm3p5" path="res://models/fire.glb" id="1_85ndw"]
+
+[node name="fire" instance=ExtResource("1_85ndw")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="fire3Group20972" parent="Sketchfab_model/562a047e15904e1db8aa0c0e2df6e95dfbx/Object_2/RootNode" index="0"]
+transform = Transform3D(0.268614, 0, 0, 0, 0.268614, 0, 0, 0, 0.268614, 0, 0, 0)
+
+[node name="0" parent="Sketchfab_model/562a047e15904e1db8aa0c0e2df6e95dfbx/Object_2/RootNode/fire3Group20972" index="0"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.648937, 1.44093e-16)
+blend_shapes/morph_0 = 0.0381497
