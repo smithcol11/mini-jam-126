@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://wkqo6oyvjcbm"]
+[gd_scene load_steps=17 format=3 uid="uid://wkqo6oyvjcbm"]
 
 [ext_resource type="Script" path="res://scripts/seed_picker_menu.gd" id="1_uig6b"]
 [ext_resource type="LabelSettings" uid="uid://csmlc7xxldku6" path="res://label_styles/main_label_style.tres" id="2_05x56"]
@@ -9,7 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://pbajh11eyu86" path="res://icons/icons8-fuel-gas-64.png" id="7_e7itv"]
 [ext_resource type="Texture2D" uid="uid://dw6skf20mo3lf" path="res://icons/icons8-spring-in-motion-50.png" id="8_uifaa"]
 [ext_resource type="SystemFont" uid="uid://c4dkrnrhy1e82" path="res://fonts/MainFont.tres" id="9_ehnsl"]
-[ext_resource type="Texture2D" uid="uid://e8ecswohwoce" path="res://icons/icons8-flax-seeds-64.png" id="9_ub5ja"]
+[ext_resource type="Texture2D" uid="uid://bxdh6ru7bva5s" path="res://icons/cursed_potato_icon.png" id="10_tkm4q"]
+[ext_resource type="Texture2D" uid="uid://1s3xp5f6myln" path="res://icons/tomato-icon.png" id="11_pfpea"]
+[ext_resource type="Texture2D" uid="uid://cxtpll5gg5iht" path="res://icons/wheat_icon.png" id="12_kbp4j"]
+[ext_resource type="Texture2D" uid="uid://c2la22wl6ja56" path="res://icons/carrot_icon.png" id="13_kmj4p"]
+[ext_resource type="Texture2D" uid="uid://bc6dl0ynqdnfj" path="res://icons/broccoli_icon.png" id="14_n2giv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1jn0s"]
 bg_color = Color(0.470588, 0.596078, 0.854902, 1)
@@ -179,7 +183,7 @@ theme_override_fonts/font = ExtResource("9_ehnsl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_l2yte")
 toggle_mode = true
 text = "Potato"
-icon = ExtResource("9_ub5ja")
+icon = ExtResource("10_tkm4q")
 icon_alignment = 1
 
 [node name="PotatoSeedLabel" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer"]
@@ -196,7 +200,7 @@ theme_override_fonts/font = ExtResource("9_ehnsl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_l2yte")
 toggle_mode = true
 text = "Tomato"
-icon = ExtResource("9_ub5ja")
+icon = ExtResource("11_pfpea")
 icon_alignment = 1
 
 [node name="TomatoSeedLabel" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer2"]
@@ -214,7 +218,7 @@ theme_override_fonts/font = ExtResource("9_ehnsl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_l2yte")
 toggle_mode = true
 text = "Wheat"
-icon = ExtResource("9_ub5ja")
+icon = ExtResource("12_kbp4j")
 icon_alignment = 1
 
 [node name="WheatSeedLabel" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer3"]
@@ -231,7 +235,7 @@ theme_override_fonts/font = ExtResource("9_ehnsl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_l2yte")
 toggle_mode = true
 text = "Carrot"
-icon = ExtResource("9_ub5ja")
+icon = ExtResource("13_kmj4p")
 icon_alignment = 1
 
 [node name="CarrotSeedLabel" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer4"]
@@ -248,7 +252,7 @@ theme_override_fonts/font = ExtResource("9_ehnsl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_l2yte")
 toggle_mode = true
 text = "Broccoli"
-icon = ExtResource("9_ub5ja")
+icon = ExtResource("14_n2giv")
 icon_alignment = 1
 
 [node name="BroccoliSeedLabel" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer5"]

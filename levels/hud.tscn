@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ccu45lnqeh7x0"]
+[gd_scene load_steps=22 format=3 uid="uid://ccu45lnqeh7x0"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_7arxs"]
 [ext_resource type="Theme" uid="uid://8kojskkw4y67" path="res://materials/theme.tres" id="1_ni4fc"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://scripts/hud_scripts/food_supply_bar.gd" id="9_auvrm"]
 [ext_resource type="LabelSettings" uid="uid://csmlc7xxldku6" path="res://label_styles/main_label_style.tres" id="11_328qs"]
 [ext_resource type="Script" path="res://scripts/hud_scripts/season_label.gd" id="11_hfpgl"]
+[ext_resource type="Texture2D" uid="uid://dly4d8flfjk8u" path="res://icons/malfunction_speed.png" id="15_aqdlh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pqo7o"]
 bg_color = Color(0.364706, 0.364706, 0.364706, 0.215686)
@@ -240,6 +241,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MalfunctionLabel" type="Label" parent="ProgressBar"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -255,6 +257,23 @@ grow_vertical = 2
 text = "Time machine malfunctioning!
 "
 label_settings = ExtResource("11_328qs")
+
+[node name="TextureRect" type="TextureRect" parent="ProgressBar/MalfunctionLabel"]
+layout_mode = 0
+offset_left = 351.5
+offset_top = -11.0
+offset_right = 479.5
+offset_bottom = 117.0
+scale = Vector2(0.407, 0.407)
+texture = ExtResource("15_aqdlh")
+
+[node name="TextureRect2" type="TextureRect" parent="ProgressBar/MalfunctionLabel"]
+offset_left = -71.5001
+offset_top = -12.0
+offset_right = 56.4999
+offset_bottom = 116.0
+scale = Vector2(0.407, 0.407)
+texture = ExtResource("15_aqdlh")
 
 [node name="Timer" type="Timer" parent="."]
 

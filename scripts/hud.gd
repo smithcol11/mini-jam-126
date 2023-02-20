@@ -150,6 +150,7 @@ func _on_timer_timeout():
 func _on_progress_bar_value_changed(value):
 	if value >= 90:
 		$Timer.wait_time = secondsPerDay
+		get_tree().get_root().find_child("MalfunctionLabel", true, false).visible = false
 		if season == 1:
 			$ProgressBar/Button7.icon = icon_spring
 			$ProgressBar/Button8.icon = icon_summer
@@ -171,11 +172,11 @@ func _on_progress_bar_value_changed(value):
 		day = 0
 		$ProgressBar.value = day
 		emit_signal("season_change", season)
-		if ($Timer.wait_time != seasonSkipSecondsPerDay):
-			var randomTimeEvent = rng.randi_range(1,4)
-			if randomTimeEvent == 1:
-				#get_tree().get_root().find_child("SeedInventory", true, false)
-				$Timer.wait_time = timeEventSecondsPerDay
+		
+		var randomTimeEvent = rng.randi_range(1,4)
+		if randomTimeEvent == 1:
+			get_tree().get_root().find_child("MalfunctionLabel", true, false).visible = true
+			$Timer.wait_time = timeEventSecondsPerDay
 
 func _on_start_menu_start_game():
 	#Setup time:
