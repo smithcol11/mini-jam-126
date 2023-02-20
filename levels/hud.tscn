@@ -409,6 +409,7 @@ icon_alignment = 1
 
 [node name="TextureRect2" type="TextureRect" parent="CenterContainer/HBoxContainer/tomato"]
 custom_minimum_size = Vector2(75, 75)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("17_juoeg")
@@ -442,6 +443,7 @@ icon_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/wheat"]
 custom_minimum_size = Vector2(75, 75)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("18_ckq2k")
@@ -475,6 +477,7 @@ icon_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/carrot"]
 custom_minimum_size = Vector2(75, 75)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("19_djjge")
@@ -508,6 +511,7 @@ icon_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/broccoli"]
 custom_minimum_size = Vector2(75, 75)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("20_xy47h")
