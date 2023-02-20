@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://ce50q6malh3b8"]
+[gd_scene load_steps=37 format=3 uid="uid://ce50q6malh3b8"]
 
 [ext_resource type="Script" path="res://scripts/camera_controller.gd" id="1_8sg2u"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_hheku"]
@@ -49,6 +49,42 @@ adjustment_brightness = 0.9
 adjustment_contrast = 1.2
 adjustment_saturation = 1.2
 
+[sub_resource type="Animation" id="Animation_er86h"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(18, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(35, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(18, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
 [sub_resource type="Animation" id="Animation_416rh"]
 resource_name = "shake_screen"
 length = 3.0
@@ -85,42 +121,6 @@ tracks/2/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0),
 "points": PackedFloat32Array(18, -0.25, 0, 0.25, 0, 17.5, -0.25, 0, 0.25, 0, 18.43, -0.25, 0, 0.25, 0, 17.9429, -0.25, 0, 0.25, 0, 17.9429, -0.25, 0, 0.25, 0, 17.9429, -0.25, 0, 0.25, 0, 18, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3)
-}
-
-[sub_resource type="Animation" id="Animation_er86h"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(18, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(35, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position:z")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(18, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ktq7n"]

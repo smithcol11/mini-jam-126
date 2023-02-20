@@ -16,7 +16,7 @@ var season = 0
 var year = 0
 var day = 0
 
-var win_condition = true
+var win_condition = false
 
 var num_of_gears = 0 # max 100
 var num_of_bearings = 0 # max 50
