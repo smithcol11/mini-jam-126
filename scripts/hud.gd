@@ -230,11 +230,11 @@ func update_button_values():
 	buttons[2].text = str(seedInventory.get_piston_seeds())
 	buttons[3].text = str(seedInventory.get_spring_seeds())
 	buttons[4].text = str(seedInventory.get_fuel_seeds())
-	buttons[5].text = str(seedInventory.get_potato_seeds())
-	buttons[6].text = str(seedInventory.get_tomato_seeds())
-	buttons[7].text = str(seedInventory.get_wheat_seeds())
-	buttons[8].text = str(seedInventory.get_carrot_seeds())
-	buttons[9].text = str(seedInventory.get_broccoli_seeds())
+	buttons[5].get_node("Label").text = str(seedInventory.get_potato_seeds())
+	buttons[6].get_node("Label").text = str(seedInventory.get_tomato_seeds())
+	buttons[7].get_node("Label").text = str(seedInventory.get_wheat_seeds())
+	buttons[8].get_node("Label").text = str(seedInventory.get_carrot_seeds())
+	buttons[9].get_node("Label").text = str(seedInventory.get_broccoli_seeds())
 
 
 func _on_button_pressed():

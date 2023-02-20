@@ -171,92 +171,167 @@ vertical_alignment = 1
 
 [node name="HBoxFoodPlants" type="HBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2"]
 layout_mode = 2
+size_flags_horizontal = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants"]
 layout_mode = 2
+size_flags_vertical = 0
 
 [node name="PotatoSeedButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 0
 theme = ExtResource("3_h1grr")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_ehnsl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_l2yte")
 toggle_mode = true
-text = "Potato"
 icon = ExtResource("10_tkm4q")
 icon_alignment = 1
 
 [node name="PotatoSeedLabel" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer"]
 layout_mode = 2
+text = "Potato"
+horizontal_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants"]
 layout_mode = 2
 
 [node name="TomatoSeedButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer2"]
+custom_minimum_size = Vector2(58, 58)
 layout_mode = 2
+size_flags_vertical = 0
 theme = ExtResource("3_h1grr")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_ehnsl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_l2yte")
 toggle_mode = true
-text = "Tomato"
-icon = ExtResource("11_pfpea")
 icon_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer2/TomatoSeedButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_pfpea")
+expand_mode = 3
 
 [node name="TomatoSeedLabel" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer2"]
 layout_mode = 2
+text = "Tomato"
+horizontal_alignment = 1
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants"]
 layout_mode = 2
-theme_override_constants/separation = 8
 
 [node name="WheatSeedButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer3"]
+custom_minimum_size = Vector2(58, 58)
 layout_mode = 2
+size_flags_vertical = 0
 theme = ExtResource("3_h1grr")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_ehnsl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_l2yte")
 toggle_mode = true
-text = "Wheat"
-icon = ExtResource("12_kbp4j")
 icon_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer3/WheatSeedButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_kbp4j")
+expand_mode = 3
 
 [node name="WheatSeedLabel" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer3"]
 layout_mode = 2
+text = "Wheat"
+horizontal_alignment = 1
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants"]
 layout_mode = 2
 
 [node name="CarrotSeedButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer4"]
+custom_minimum_size = Vector2(58, 58)
 layout_mode = 2
+size_flags_vertical = 0
 theme = ExtResource("3_h1grr")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_ehnsl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_l2yte")
 toggle_mode = true
-text = "Carrot"
-icon = ExtResource("13_kmj4p")
 icon_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer4/CarrotSeedButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.5
+offset_top = -25.0
+offset_right = 24.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_kmj4p")
+expand_mode = 3
 
 [node name="CarrotSeedLabel" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer4"]
 layout_mode = 2
+text = "Carrot"
+horizontal_alignment = 1
 
 [node name="VBoxContainer5" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants"]
 layout_mode = 2
 
 [node name="BroccoliSeedButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer5"]
+custom_minimum_size = Vector2(58, 58)
 layout_mode = 2
+size_flags_vertical = 0
 theme = ExtResource("3_h1grr")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_ehnsl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_l2yte")
 toggle_mode = true
-text = "Broccoli"
-icon = ExtResource("14_n2giv")
 icon_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer5/BroccoliSeedButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.5
+offset_top = -25.0
+offset_right = 24.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_n2giv")
+expand_mode = 3
 
 [node name="BroccoliSeedLabel" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3/VBoxContainer2/HBoxFoodPlants/VBoxContainer5"]
 layout_mode = 2
+text = "Broccoli"
+horizontal_alignment = 1
 
 [node name="BeginButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2

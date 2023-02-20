@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ccu45lnqeh7x0"]
+[gd_scene load_steps=27 format=3 uid="uid://ccu45lnqeh7x0"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_7arxs"]
 [ext_resource type="Theme" uid="uid://8kojskkw4y67" path="res://materials/theme.tres" id="1_ni4fc"]
@@ -15,6 +15,11 @@
 [ext_resource type="LabelSettings" uid="uid://csmlc7xxldku6" path="res://label_styles/main_label_style.tres" id="11_328qs"]
 [ext_resource type="Script" path="res://scripts/hud_scripts/season_label.gd" id="11_hfpgl"]
 [ext_resource type="Texture2D" uid="uid://dly4d8flfjk8u" path="res://icons/malfunction_speed.png" id="15_aqdlh"]
+[ext_resource type="Texture2D" uid="uid://bxdh6ru7bva5s" path="res://icons/cursed_potato_icon.png" id="16_ejxk8"]
+[ext_resource type="Texture2D" uid="uid://1s3xp5f6myln" path="res://icons/tomato-icon.png" id="17_juoeg"]
+[ext_resource type="Texture2D" uid="uid://cxtpll5gg5iht" path="res://icons/wheat_icon.png" id="18_ckq2k"]
+[ext_resource type="Texture2D" uid="uid://c2la22wl6ja56" path="res://icons/carrot_icon.png" id="19_djjge"]
+[ext_resource type="Texture2D" uid="uid://bc6dl0ynqdnfj" path="res://icons/broccoli_icon.png" id="20_xy47h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pqo7o"]
 bg_color = Color(0.364706, 0.364706, 0.364706, 0.215686)
@@ -268,6 +273,7 @@ scale = Vector2(0.407, 0.407)
 texture = ExtResource("15_aqdlh")
 
 [node name="TextureRect2" type="TextureRect" parent="ProgressBar/MalfunctionLabel"]
+layout_mode = 0
 offset_left = -71.5001
 offset_top = -12.0
 offset_right = 56.4999
@@ -297,8 +303,9 @@ theme_override_constants/separation = 12
 [node name="gear" type="Button" parent="CenterContainer/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_ni4fc")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_g0m42")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 32
 theme_override_styles/pressed = SubResource("StyleBoxFlat_j5v3e")
 toggle_mode = true
 text = "0"
@@ -308,8 +315,9 @@ icon_alignment = 1
 [node name="bearing" type="Button" parent="CenterContainer/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_ni4fc")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_g0m42")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 32
 theme_override_styles/pressed = SubResource("StyleBoxFlat_j5v3e")
 toggle_mode = true
 text = "0"
@@ -319,8 +327,9 @@ icon_alignment = 1
 [node name="piston" type="Button" parent="CenterContainer/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_ni4fc")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_g0m42")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 32
 theme_override_styles/pressed = SubResource("StyleBoxFlat_j5v3e")
 toggle_mode = true
 text = "0"
@@ -330,8 +339,9 @@ icon_alignment = 1
 [node name="spring" type="Button" parent="CenterContainer/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_ni4fc")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_g0m42")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 32
 theme_override_styles/pressed = SubResource("StyleBoxFlat_j5v3e")
 toggle_mode = true
 text = "0"
@@ -341,8 +351,9 @@ icon_alignment = 1
 [node name="fuel" type="Button" parent="CenterContainer/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_ni4fc")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_g0m42")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 32
 theme_override_styles/pressed = SubResource("StyleBoxFlat_j5v3e")
 toggle_mode = true
 text = "0"
@@ -353,6 +364,7 @@ icon_alignment = 1
 layout_mode = 2
 
 [node name="potato" type="Button" parent="CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 theme = ExtResource("1_ni4fc")
 theme_override_fonts/font = ExtResource("7_g0m42")
@@ -360,10 +372,32 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/pressed = SubResource("StyleBoxFlat_j5v3e")
 toggle_mode = true
 text = "0"
-icon = ExtResource("6_ivdkp")
 icon_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/potato"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("16_ejxk8")
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/potato"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ni4fc")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_g0m42")
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="tomato" type="Button" parent="CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 theme = ExtResource("1_ni4fc")
 theme_override_fonts/font = ExtResource("7_g0m42")
@@ -371,10 +405,32 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/pressed = SubResource("StyleBoxFlat_j5v3e")
 toggle_mode = true
 text = "0"
-icon = ExtResource("6_ivdkp")
 icon_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="CenterContainer/HBoxContainer/tomato"]
+custom_minimum_size = Vector2(75, 75)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("17_juoeg")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/tomato"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ni4fc")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_g0m42")
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="wheat" type="Button" parent="CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 theme = ExtResource("1_ni4fc")
 theme_override_fonts/font = ExtResource("7_g0m42")
@@ -382,10 +438,32 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/pressed = SubResource("StyleBoxFlat_j5v3e")
 toggle_mode = true
 text = "0"
-icon = ExtResource("6_ivdkp")
 icon_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/wheat"]
+custom_minimum_size = Vector2(75, 75)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("18_ckq2k")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/wheat"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ni4fc")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_g0m42")
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="carrot" type="Button" parent="CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 theme = ExtResource("1_ni4fc")
 theme_override_fonts/font = ExtResource("7_g0m42")
@@ -393,10 +471,32 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/pressed = SubResource("StyleBoxFlat_j5v3e")
 toggle_mode = true
 text = "0"
-icon = ExtResource("6_ivdkp")
 icon_alignment = 1
 
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/carrot"]
+custom_minimum_size = Vector2(75, 75)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("19_djjge")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/carrot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ni4fc")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_g0m42")
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="broccoli" type="Button" parent="CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 theme = ExtResource("1_ni4fc")
 theme_override_fonts/font = ExtResource("7_g0m42")
@@ -404,8 +504,29 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/pressed = SubResource("StyleBoxFlat_j5v3e")
 toggle_mode = true
 text = "0"
-icon = ExtResource("6_ivdkp")
 icon_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/broccoli"]
+custom_minimum_size = Vector2(75, 75)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("20_xy47h")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/broccoli"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ni4fc")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_g0m42")
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
