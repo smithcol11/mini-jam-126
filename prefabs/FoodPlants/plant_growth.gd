@@ -59,7 +59,7 @@ func _on_hud_day_change(day):
 	
 	var moveVec = Vector3(0, distancePerDay, 0)
 	translate_object_local(moveVec)
-	if days_alive == plantData["mature_time"]:
+	if days_alive > plantData["mature_time"]:
 		if plantData["ID"] > 5:
 			#food plant:
 			hud.add_health(plantData["food_restored"])
