@@ -296,11 +296,21 @@ offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="OutOfSeasonWarning" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.976471, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_g0m42")
+text = "Cannot plant: this is out of season!"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="gear" type="Button" parent="CenterContainer/HBoxContainer"]
+[node name="gear" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_ni4fc")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -312,7 +322,7 @@ text = "0"
 icon = ExtResource("2_e22va")
 icon_alignment = 1
 
-[node name="bearing" type="Button" parent="CenterContainer/HBoxContainer"]
+[node name="bearing" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_ni4fc")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -324,7 +334,7 @@ text = "0"
 icon = ExtResource("4_l88j7")
 icon_alignment = 1
 
-[node name="piston" type="Button" parent="CenterContainer/HBoxContainer"]
+[node name="piston" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_ni4fc")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -336,7 +346,7 @@ text = "0"
 icon = ExtResource("3_4gy33")
 icon_alignment = 1
 
-[node name="spring" type="Button" parent="CenterContainer/HBoxContainer"]
+[node name="spring" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_ni4fc")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -348,7 +358,7 @@ text = "0"
 icon = ExtResource("6_o8dul")
 icon_alignment = 1
 
-[node name="fuel" type="Button" parent="CenterContainer/HBoxContainer"]
+[node name="fuel" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_ni4fc")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -360,10 +370,10 @@ text = "0"
 icon = ExtResource("5_todq5")
 icon_alignment = 1
 
-[node name="Control" type="Control" parent="CenterContainer/HBoxContainer"]
+[node name="Control" type="Control" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="potato" type="Button" parent="CenterContainer/HBoxContainer"]
+[node name="potato" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 theme = ExtResource("1_ni4fc")
@@ -374,14 +384,14 @@ toggle_mode = true
 text = "0"
 icon_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/potato"]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/HBoxContainer/potato"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("16_ejxk8")
 
-[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/potato"]
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/potato"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -396,7 +406,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="tomato" type="Button" parent="CenterContainer/HBoxContainer"]
+[node name="tomato" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 theme = ExtResource("1_ni4fc")
@@ -407,14 +417,15 @@ toggle_mode = true
 text = "0"
 icon_alignment = 1
 
-[node name="TextureRect2" type="TextureRect" parent="CenterContainer/HBoxContainer/tomato"]
+[node name="TextureRect2" type="TextureRect" parent="CenterContainer/VBoxContainer/HBoxContainer/tomato"]
 custom_minimum_size = Vector2(75, 75)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("17_juoeg")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/tomato"]
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/tomato"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -429,7 +440,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="wheat" type="Button" parent="CenterContainer/HBoxContainer"]
+[node name="wheat" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 theme = ExtResource("1_ni4fc")
@@ -440,14 +451,15 @@ toggle_mode = true
 text = "0"
 icon_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/wheat"]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/HBoxContainer/wheat"]
 custom_minimum_size = Vector2(75, 75)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("18_ckq2k")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/wheat"]
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/wheat"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -462,7 +474,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="carrot" type="Button" parent="CenterContainer/HBoxContainer"]
+[node name="carrot" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 theme = ExtResource("1_ni4fc")
@@ -473,14 +485,15 @@ toggle_mode = true
 text = "0"
 icon_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/carrot"]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/HBoxContainer/carrot"]
 custom_minimum_size = Vector2(75, 75)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("19_djjge")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/carrot"]
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/carrot"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -495,7 +508,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="broccoli" type="Button" parent="CenterContainer/HBoxContainer"]
+[node name="broccoli" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 theme = ExtResource("1_ni4fc")
@@ -506,14 +519,15 @@ toggle_mode = true
 text = "0"
 icon_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/broccoli"]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/HBoxContainer/broccoli"]
 custom_minimum_size = Vector2(75, 75)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("20_xy47h")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/broccoli"]
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/broccoli"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -544,15 +558,15 @@ Skip Season"
 [connection signal="year_change" from="." to="ProgressBar/SeasonLabel" method="_on_hud_year_change"]
 [connection signal="value_changed" from="ProgressBar" to="." method="_on_progress_bar_value_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="CenterContainer/HBoxContainer/gear" to="." method="_on_gear_pressed"]
-[connection signal="toggled" from="CenterContainer/HBoxContainer/gear" to="." method="_on_gear_toggled"]
-[connection signal="toggled" from="CenterContainer/HBoxContainer/bearing" to="." method="_on_bearing_toggled"]
-[connection signal="toggled" from="CenterContainer/HBoxContainer/piston" to="." method="_on_piston_toggled"]
-[connection signal="toggled" from="CenterContainer/HBoxContainer/spring" to="." method="_on_spring_toggled"]
-[connection signal="toggled" from="CenterContainer/HBoxContainer/fuel" to="." method="_on_fuel_toggled"]
-[connection signal="toggled" from="CenterContainer/HBoxContainer/potato" to="." method="_on_potato_toggled"]
-[connection signal="toggled" from="CenterContainer/HBoxContainer/tomato" to="." method="_on_tomato_toggled"]
-[connection signal="toggled" from="CenterContainer/HBoxContainer/wheat" to="." method="_on_wheat_toggled"]
-[connection signal="toggled" from="CenterContainer/HBoxContainer/carrot" to="." method="_on_carrot_toggled"]
-[connection signal="toggled" from="CenterContainer/HBoxContainer/broccoli" to="." method="_on_broccoli_toggled"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/gear" to="." method="_on_gear_pressed"]
+[connection signal="toggled" from="CenterContainer/VBoxContainer/HBoxContainer/gear" to="." method="_on_gear_toggled"]
+[connection signal="toggled" from="CenterContainer/VBoxContainer/HBoxContainer/bearing" to="." method="_on_bearing_toggled"]
+[connection signal="toggled" from="CenterContainer/VBoxContainer/HBoxContainer/piston" to="." method="_on_piston_toggled"]
+[connection signal="toggled" from="CenterContainer/VBoxContainer/HBoxContainer/spring" to="." method="_on_spring_toggled"]
+[connection signal="toggled" from="CenterContainer/VBoxContainer/HBoxContainer/fuel" to="." method="_on_fuel_toggled"]
+[connection signal="toggled" from="CenterContainer/VBoxContainer/HBoxContainer/potato" to="." method="_on_potato_toggled"]
+[connection signal="toggled" from="CenterContainer/VBoxContainer/HBoxContainer/tomato" to="." method="_on_tomato_toggled"]
+[connection signal="toggled" from="CenterContainer/VBoxContainer/HBoxContainer/wheat" to="." method="_on_wheat_toggled"]
+[connection signal="toggled" from="CenterContainer/VBoxContainer/HBoxContainer/carrot" to="." method="_on_carrot_toggled"]
+[connection signal="toggled" from="CenterContainer/VBoxContainer/HBoxContainer/broccoli" to="." method="_on_broccoli_toggled"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
