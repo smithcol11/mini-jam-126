@@ -10,12 +10,14 @@ signal set_camera_signal
 
 var initialPosition : Vector3
 var zoomVal : float = 1.0 # zoom between 0.0 and 1.0
-
+var rand = RandomNumberGenerator.new()
 var enableControls = false;
+var win = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	emit_signal("set_camera_signal", self)
+	rand.randomize()
 	initialPosition = transform.origin
 	
 
@@ -25,10 +27,10 @@ func evaluateScreenSize(zoom):
 	return smallestZoom + ((largestZoom - smallestZoom) * y)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	if (enableControls):
 		update_input(delta)
-			
+
 func update_input(delta):
 	var xdir = 0
 	var ydir = 0
@@ -59,6 +61,12 @@ func update_input(delta):
 		var moveVec = Vector3(pSpeed * xdir * delta, pSpeed * ydir * delta, 0)
 		translate_object_local(moveVec)
 
-
 func _on_start_menu_start_game():
 	enableControls = true
+	
+func _on_hud_win_game():
+	$AnimationPlayer.speed_scale = 10
+	var fire = get_parent().get_node("Enviornment/RocketShip/RocketShip2/Fire")
+	fire.show()
+	fire.get_child(1).play("Take 001")
+	$AnimationPlayer.play("shake_screen")

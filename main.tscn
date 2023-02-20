@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://ce50q6malh3b8"]
+[gd_scene load_steps=37 format=3 uid="uid://ce50q6malh3b8"]
 
 [ext_resource type="Script" path="res://scripts/camera_controller.gd" id="1_8sg2u"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_hheku"]
@@ -49,6 +49,86 @@ adjustment_brightness = 0.9
 adjustment_contrast = 1.2
 adjustment_saturation = 1.2
 
+[sub_resource type="Animation" id="Animation_er86h"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(18, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(35, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(18, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_416rh"]
+resource_name = "shake_screen"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(18, -0.25, 0, 0.25, 0, 18.5, -0.25, 0, 0.25, 0, 18, -0.25, 0, 0.25, 0, 18, -0.25, 0, 0.25, 0, 18.3016, -0.25, 0, 0.25, 0, 18.3016, -0.25, 0, 0.25, 0, 18, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(35, -0.25, 0, 0.25, 0, 34.5, -0.25, 0, 0.25, 0, 35.399, -0.25, 0, 0.25, 0, 35.399, -0.25, 0, 0.25, 0, 34.8929, -0.25, 0, 0.25, 0, 34.8929, -0.25, 0, 0.25, 0, 35, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(18, -0.25, 0, 0.25, 0, 17.5, -0.25, 0, 0.25, 0, 18.43, -0.25, 0, 0.25, 0, 17.9429, -0.25, 0, 0.25, 0, 17.9429, -0.25, 0, 0.25, 0, 17.9429, -0.25, 0, 0.25, 0, 18, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ktq7n"]
+_data = {
+"RESET": SubResource("Animation_er86h"),
+"shake_screen": SubResource("Animation_416rh")
+}
+
 [node name="Main" type="Node3D"]
 script = ExtResource("1_hheku")
 
@@ -69,6 +149,11 @@ largestPanSpeed = 25.0
 zoomSpeed = 4.0
 smallestZoom = 5.0
 largestZoom = 25.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D"]
+libraries = {
+"": SubResource("AnimationLibrary_ktq7n")
+}
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.0048, 35.0826, 30.1681)
@@ -93,7 +178,7 @@ script = ExtResource("3_jdgnu")
 transform = Transform3D(-0.0427401, 0, 0.660746, 0, 0.662127, 0, -0.660746, 0, -0.0427401, -2.27293, 0.550639, -7.46473)
 
 [node name="RocketShip" parent="Enviornment" instance=ExtResource("7_sshfa")]
-transform = Transform3D(0.942313, 0, -0.410199, 0, 1.02772, 0, 0.410199, 0, 0.942313, -7.2219, 2.4174, 0.0945277)
+transform = Transform3D(0.942313, 0, -0.410199, 0, 1.02772, 0, 0.410199, 0, 0.942313, -7.17985, 2.43747, 0)
 
 [node name="PlantBoxes" type="Node3D" parent="Enviornment"]
 
@@ -757,6 +842,8 @@ script = ExtResource("31_6xi6v")
 [connection signal="game_over" from="Hud" to="GameOverMenu" method="_on_hud_game_over"]
 [connection signal="season_change" from="Hud" to="." method="_on_hud_season_change"]
 [connection signal="visibility_changed" from="Hud" to="SeedPickerMenu" method="_on_hud_visibility_changed"]
+[connection signal="win_game" from="Hud" to="." method="_on_hud_win_game"]
+[connection signal="win_game" from="Hud" to="Camera3D" method="_on_hud_win_game"]
 [connection signal="year_change" from="Hud" to="SeedPickerMenu" method="_on_hud_year_change"]
 [connection signal="finished" from="Music" to="." method="_on_music_finished"]
 [connection signal="finished" from="Music2" to="." method="_on_music_2_finished"]
