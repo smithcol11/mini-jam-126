@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dppewd33depjs"]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="PackedScene" uid="uid://pbuqxalbt4j8" path="res://models/food_plants/TomatoPartPlant.glb" id="1_jw2o8"]
 [ext_resource type="Material" uid="uid://d3anaxu0yqpu0" path="res://materials/color_pallete_material.tres" id="2_1i8js"]
-[ext_resource type="Script" path="res://prefabs/FoodPlants/plant_growth.gd" id="2_jxud1"]
+[ext_resource type="Script" path="res://scripts/plant_growth.gd" id="2_jxud1"]
 
 [node name="TomatoPartPlant" instance=ExtResource("1_jw2o8")]
 script = ExtResource("2_jxud1")

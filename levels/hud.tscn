@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ccu45lnqeh7x0"]
+[gd_scene load_steps=28 format=3 uid="uid://ccu45lnqeh7x0"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_7arxs"]
 [ext_resource type="Theme" uid="uid://8kojskkw4y67" path="res://materials/theme.tres" id="1_ni4fc"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://scripts/hud_scripts/season_label.gd" id="11_hfpgl"]
 [ext_resource type="Texture2D" uid="uid://dly4d8flfjk8u" path="res://icons/malfunction_speed.png" id="15_aqdlh"]
 [ext_resource type="Texture2D" uid="uid://bxdh6ru7bva5s" path="res://icons/cursed_potato_icon.png" id="16_ejxk8"]
+[ext_resource type="Script" path="res://scripts/warning_label.gd" id="16_jc7a4"]
 [ext_resource type="Texture2D" uid="uid://1s3xp5f6myln" path="res://icons/tomato-icon.png" id="17_juoeg"]
 [ext_resource type="Texture2D" uid="uid://cxtpll5gg5iht" path="res://icons/wheat_icon.png" id="18_ckq2k"]
 [ext_resource type="Texture2D" uid="uid://c2la22wl6ja56" path="res://icons/carrot_icon.png" id="19_djjge"]
@@ -300,11 +301,15 @@ grow_vertical = 0
 layout_mode = 2
 
 [node name="OutOfSeasonWarning" type="Label" parent="CenterContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.976471, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_g0m42")
 text = "Cannot plant: this is out of season!"
 horizontal_alignment = 1
+script = ExtResource("16_jc7a4")
+
+[node name="WarningTimer" type="Timer" parent="CenterContainer/VBoxContainer/OutOfSeasonWarning"]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -558,6 +563,7 @@ Skip Season"
 [connection signal="year_change" from="." to="ProgressBar/SeasonLabel" method="_on_hud_year_change"]
 [connection signal="value_changed" from="ProgressBar" to="." method="_on_progress_bar_value_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="CenterContainer/VBoxContainer/OutOfSeasonWarning/WarningTimer" to="CenterContainer/VBoxContainer/OutOfSeasonWarning" method="_on_warning_timer_timeout"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/gear" to="." method="_on_gear_pressed"]
 [connection signal="toggled" from="CenterContainer/VBoxContainer/HBoxContainer/gear" to="." method="_on_gear_toggled"]
 [connection signal="toggled" from="CenterContainer/VBoxContainer/HBoxContainer/bearing" to="." method="_on_bearing_toggled"]
