@@ -239,6 +239,23 @@ label_settings = ExtResource("11_328qs")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="MalfunctionLabel" type="Label" parent="ProgressBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.5
+offset_top = -13.5
+offset_right = 164.5
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Time machine malfunctioning!
+"
+label_settings = ExtResource("11_328qs")
+
 [node name="Timer" type="Timer" parent="."]
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
@@ -371,6 +388,18 @@ text = "0"
 icon = ExtResource("6_ivdkp")
 icon_alignment = 1
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -27.0
+offset_right = 100.0
+offset_bottom = 27.0
+grow_vertical = 2
+text = "Time Travel
+Skip Season"
+
 [connection signal="season_change" from="." to="ProgressBar/SeasonLabel" method="_on_hud_season_change"]
 [connection signal="year_change" from="." to="ProgressBar/SeasonLabel" method="_on_hud_year_change"]
 [connection signal="value_changed" from="ProgressBar" to="." method="_on_progress_bar_value_changed"]
@@ -386,3 +415,4 @@ icon_alignment = 1
 [connection signal="toggled" from="CenterContainer/HBoxContainer/wheat" to="." method="_on_wheat_toggled"]
 [connection signal="toggled" from="CenterContainer/HBoxContainer/carrot" to="." method="_on_carrot_toggled"]
 [connection signal="toggled" from="CenterContainer/HBoxContainer/broccoli" to="." method="_on_broccoli_toggled"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

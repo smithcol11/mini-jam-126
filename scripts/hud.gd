@@ -1,6 +1,9 @@
 extends Control
 
-@export var secondsPerDay : float = 1 #wasn't working for Timer.Start(secondsPerDay)? changed to $Timer.start(1) 
+@export var secondsPerDay : float = 0.5
+@export var timeEventSecondsPerDay : float = 0.1
+@export var seasonSkipSecondsPerDay : float = 0.025
+
 @export var usedFoodPerDay : float = 1
 
 signal win_game
@@ -54,6 +57,10 @@ var bearingAmount
 var pistonAmount
 var springAmount
 var fuelAmount
+
+
+
+var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -136,11 +143,13 @@ func _physics_process(delta):
 func _on_timer_timeout():
 	day += 1
 	$ProgressBar.value = day
+			
 	foodBar.deplete_food(usedFoodPerDay)
 	emit_signal("day_change", day)
 
 func _on_progress_bar_value_changed(value):
 	if value >= 90:
+		$Timer.wait_time = secondsPerDay
 		if season == 1:
 			$ProgressBar/Button7.icon = icon_spring
 			$ProgressBar/Button8.icon = icon_summer
@@ -162,6 +171,11 @@ func _on_progress_bar_value_changed(value):
 		day = 0
 		$ProgressBar.value = day
 		emit_signal("season_change", season)
+		if ($Timer.wait_time != seasonSkipSecondsPerDay):
+			var randomTimeEvent = rng.randi_range(1,4)
+			if randomTimeEvent == 1:
+				#get_tree().get_root().find_child("SeedInventory", true, false)
+				$Timer.wait_time = timeEventSecondsPerDay
 
 func _on_start_menu_start_game():
 	#Setup time:
@@ -220,3 +234,8 @@ func update_button_values():
 	buttons[7].text = str(seedInventory.get_wheat_seeds())
 	buttons[8].text = str(seedInventory.get_carrot_seeds())
 	buttons[9].text = str(seedInventory.get_broccoli_seeds())
+
+
+func _on_button_pressed():
+	$Timer.wait_time = seasonSkipSecondsPerDay
+	
