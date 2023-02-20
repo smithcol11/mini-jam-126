@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ccu45lnqeh7x0"]
+[gd_scene load_steps=21 format=3 uid="uid://ccu45lnqeh7x0"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_7arxs"]
 [ext_resource type="Theme" uid="uid://8kojskkw4y67" path="res://materials/theme.tres" id="1_ni4fc"]
@@ -29,6 +29,9 @@ bg_color = Color(0.745098, 0, 0.176471, 0.945098)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5ldf"]
 bg_color = Color(0.792157, 0.156863, 0.223529, 0.870588)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j5v3e"]
+bg_color = Color(0.184314, 0.72549, 0.121569, 0.627451)
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -236,19 +239,150 @@ label_settings = ExtResource("11_328qs")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="Timer" type="Timer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.853
-anchor_right = 1.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_top = 0.299988
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Timer" type="Timer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="gear" type="Button" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ni4fc")
+theme_override_fonts/font = ExtResource("7_g0m42")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j5v3e")
+toggle_mode = true
+text = "0"
+icon = ExtResource("2_e22va")
+icon_alignment = 1
+
+[node name="bearing" type="Button" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ni4fc")
+theme_override_fonts/font = ExtResource("7_g0m42")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j5v3e")
+toggle_mode = true
+text = "0"
+icon = ExtResource("4_l88j7")
+icon_alignment = 1
+
+[node name="piston" type="Button" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ni4fc")
+theme_override_fonts/font = ExtResource("7_g0m42")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j5v3e")
+toggle_mode = true
+text = "0"
+icon = ExtResource("3_4gy33")
+icon_alignment = 1
+
+[node name="spring" type="Button" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ni4fc")
+theme_override_fonts/font = ExtResource("7_g0m42")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j5v3e")
+toggle_mode = true
+text = "0"
+icon = ExtResource("6_o8dul")
+icon_alignment = 1
+
+[node name="fuel" type="Button" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ni4fc")
+theme_override_fonts/font = ExtResource("7_g0m42")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j5v3e")
+toggle_mode = true
+text = "0"
+icon = ExtResource("5_todq5")
+icon_alignment = 1
+
+[node name="Control" type="Control" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="potato" type="Button" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ni4fc")
+theme_override_fonts/font = ExtResource("7_g0m42")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j5v3e")
+toggle_mode = true
+text = "0"
+icon = ExtResource("6_ivdkp")
+icon_alignment = 1
+
+[node name="tomato" type="Button" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ni4fc")
+theme_override_fonts/font = ExtResource("7_g0m42")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j5v3e")
+toggle_mode = true
+text = "0"
+icon = ExtResource("6_ivdkp")
+icon_alignment = 1
+
+[node name="wheat" type="Button" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ni4fc")
+theme_override_fonts/font = ExtResource("7_g0m42")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j5v3e")
+toggle_mode = true
+text = "0"
+icon = ExtResource("6_ivdkp")
+icon_alignment = 1
+
+[node name="carrot" type="Button" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ni4fc")
+theme_override_fonts/font = ExtResource("7_g0m42")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j5v3e")
+toggle_mode = true
+text = "0"
+icon = ExtResource("6_ivdkp")
+icon_alignment = 1
+
+[node name="broccoli" type="Button" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ni4fc")
+theme_override_fonts/font = ExtResource("7_g0m42")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j5v3e")
+toggle_mode = true
+text = "0"
+icon = ExtResource("6_ivdkp")
+icon_alignment = 1
 
 [connection signal="season_change" from="." to="ProgressBar/SeasonLabel" method="_on_hud_season_change"]
 [connection signal="year_change" from="." to="ProgressBar/SeasonLabel" method="_on_hud_year_change"]
 [connection signal="value_changed" from="ProgressBar" to="." method="_on_progress_bar_value_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/gear" to="." method="_on_gear_pressed"]
+[connection signal="toggled" from="CenterContainer/HBoxContainer/gear" to="." method="_on_gear_toggled"]
+[connection signal="toggled" from="CenterContainer/HBoxContainer/bearing" to="." method="_on_bearing_toggled"]
+[connection signal="toggled" from="CenterContainer/HBoxContainer/piston" to="." method="_on_piston_toggled"]
+[connection signal="toggled" from="CenterContainer/HBoxContainer/spring" to="." method="_on_spring_toggled"]
+[connection signal="toggled" from="CenterContainer/HBoxContainer/fuel" to="." method="_on_fuel_toggled"]
+[connection signal="toggled" from="CenterContainer/HBoxContainer/potato" to="." method="_on_potato_toggled"]
+[connection signal="toggled" from="CenterContainer/HBoxContainer/tomato" to="." method="_on_tomato_toggled"]
+[connection signal="toggled" from="CenterContainer/HBoxContainer/wheat" to="." method="_on_wheat_toggled"]
+[connection signal="toggled" from="CenterContainer/HBoxContainer/carrot" to="." method="_on_carrot_toggled"]
+[connection signal="toggled" from="CenterContainer/HBoxContainer/broccoli" to="." method="_on_broccoli_toggled"]

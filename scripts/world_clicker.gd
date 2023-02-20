@@ -20,7 +20,9 @@ func _process(delta):
 		
 		if not intersect.is_empty():
 			var pos = intersect.position
-			var col : StaticBody3D = intersect.collider
+			var col = null
+			if (intersect.collider is StaticBody3D):
+				col = intersect.collider
 			if col != null:
 				var obj = col.get_parent_node_3d()
 				if (obj.has_method("world_click")):

@@ -21,7 +21,6 @@ var foodSeedButtonArray
 #Reference to seed inventory script/node:
 var seedInventory
 
-
 func _ready():
 	rng.randomize()
 	
@@ -45,10 +44,10 @@ func _ready():
 	foodSeedButtonArray = [potatoSeedButton, tomatoSeedButton, wheatSeedButton, carrotSeedButton, broccoliSeedButton]
 
 func updatePartSeedLabel(labelName, partSeedDict):
-	get_tree().get_root().find_child(labelName, true, false).text = str("Gear Plant\n", "Yield Min: ", partSeedDict["yieldMin"], "\n", "Yield Max: ", partSeedDict["yieldMax"])
+	get_tree().get_root().find_child(labelName, true, false).text = str("Part\n", "Yield Min: ", partSeedDict["yieldMin"], "\n", "Yield Max: ", partSeedDict["yieldMax"])
 		
 func updateFoodSeedLabel(labelName, foodSeedDict):
-	get_tree().get_root().find_child(labelName, true, false).text = str("Potato Plant\n", "Mature Time: ", foodSeedDict["mature_time"], "\n", "Preferred Season: ", foodSeedDict["preferred_season"], "\n", "Death Season: ", foodSeedDict["death_season"], "\n", "Food Restored: ", foodSeedDict["food_restored"] )
+	get_tree().get_root().find_child(labelName, true, false).text = str("Plant\n", "Mature Time: ", foodSeedDict["mature_time"], "\n", "Preferred Season: ", foodSeedDict["preferred_season"], "\n", "Death Season: ", foodSeedDict["death_season"], "\n", "Food Restored: ", foodSeedDict["food_restored"] )
 	
 func set_is_paused(value):
 	is_paused = value
