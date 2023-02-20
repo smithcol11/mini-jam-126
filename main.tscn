@@ -395,19 +395,19 @@ transform = Transform3D(-0.806534, 0, 1.20802, 0, 1.45252, 0, -1.20802, 0, -0.80
 [node name="Trees" type="Node3D" parent="Enviornment/Foliage"]
 
 [node name="Tree1" parent="Enviornment/Foliage/Trees" instance=ExtResource("18_i7g21")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.39563, 3.70785, -9.31673)
+transform = Transform3D(0.518445, 0, 0.855111, 0, 1, 0, -0.855111, 0, 0.518445, -9.39563, 3.70785, -9.31673)
 
 [node name="Tree8" parent="Enviornment/Foliage/Trees" instance=ExtResource("18_i7g21")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.58762, 3.70785, 6.72141)
+transform = Transform3D(0.546409, 0, -0.837519, 0, 1, 0, 0.837519, 0, 0.546409, 9.58762, 3.70785, 6.72141)
 
 [node name="Tree3" parent="Enviornment/Foliage/Trees" instance=ExtResource("18_i7g21")]
 transform = Transform3D(1.17051, 0, 0, 0, 1.17051, 0, 0, 0, 1.17051, -7.41193, 4.36279, 4.67291)
 
 [node name="Tree7" parent="Enviornment/Foliage/Trees" instance=ExtResource("18_i7g21")]
-transform = Transform3D(0.802305, 0, 0, 0, 0.802305, 0, 0, 0, 0.802305, 8.95458, 3.04908, -2.25445)
+transform = Transform3D(-0.623305, 0, 0.505157, 0, 0.802305, 0, -0.505157, 0, -0.623305, 8.95458, 3.04908, -2.25445)
 
 [node name="Tree9" parent="Enviornment/Foliage/Trees" instance=ExtResource("18_i7g21")]
-transform = Transform3D(0.802305, 0, 0, 0, 0.802305, 0, 0, 0, 0.802305, 7.79404, 3.04908, -6.7506)
+transform = Transform3D(0.483555, 0, -0.640209, 0, 0.802305, 0, 0.640209, 0, 0.483555, 7.79404, 3.04908, -6.7506)
 
 [node name="Tree2" parent="Enviornment/Foliage/Trees" instance=ExtResource("19_wurbd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.06081, 2, 7.65905)
